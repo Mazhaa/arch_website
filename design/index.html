@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design - Aktan Serkan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-work="design">
+
+<div id="cursor-line-v"></div>
+<div id="cursor-line-h"></div>
+<div id="cursor-plus"><span class="glyph"></span></div>
+
+<nav class="nav">
+  <a class="brand" href="/" aria-label="Dawn — home" data-wipe>
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
+      <path d="M4 27 L15 4 L19 15 L28 10 L18 27 Z" fill="var(--ink)"/>
+    </svg>
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+  <ul class="nav-list">
+    <li class="has-dropdown">
+      <button class="nav-link dropdown-btn current" aria-haspopup="true" aria-expanded="false">Work</button>
+      <ul class="dropdown">
+        <li><a href="../architecture/index.html" class="" data-wipe>Architecture</a></li>
+        <li><a href="../design/index.html" class="" data-wipe>Design</a></li>
+        <li><a href="../research/index.html" class="" data-wipe>Research</a></li>
+        <li><a href="../extra/index.html" class="current" data-wipe>Extra</a></li>
+      </ul>
+    </li>
+    <li><a class="nav-link " href="../about/index.html" data-wipe>About</a></li>
+    <li><a class="nav-link " href="../contact/index.html" data-wipe>Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="view-work" class="view">
+    <div id="work-content">
+      <div class="work-head">
+        <h1 id="work-title"></h1>
+        <p id="work-intro"></p>
+      </div>
+      <div class="work-body">
+        <aside class="year-list" id="year-list"></aside>
+        <div class="project-list" id="project-list"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> Dawn<div class="footer-mark" aria-hidden="true"></div><span class="version-text">Version :: β 0.0.1</span></footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dawn — Architecture / Design / Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:#efeee8; --ink:#15161b; --line:#c9c6bb; --accent:#e2451f; --panel:#e2e0d5;
+    --sans:'Space Grotesk',sans-serif; --mono:'IBM Plex Mono',monospace;
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){--bg:#131318;--ink:#ece9e1;--line:#35363c;--accent:#ff6a44;--panel:#1b1c21;}
+  }
+  :root[data-theme="dark"]{--bg:#131318;--ink:#ece9e1;--line:#35363c;--accent:#ff6a44;--panel:#1b1c21;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+  a,button{font-family:inherit;color:inherit;}
+  button{background:none;border:none;cursor:pointer;font-size:1em;text-align:left;padding:0;}
+  ul{list-style:none;margin:0;padding:0;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  .nav-link::before,.dropdown li button::before,.year-btn::before{
+    content:'';position:absolute;inset:0;background:var(--ink);
+    transform:scaleX(0);transform-origin:left;
+    transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:-1;}
+  .nav-link:hover::before,.dropdown li button:hover::before,.year-btn:hover::before,
+  .nav-link.current::before,.dropdown li button.current::before,.year-btn.active::before{transform:scaleX(1);}
+  .nav-link,.dropdown li button,.year-btn{transition:color .2s ease;}
+  .nav-link:hover,.dropdown li button:hover,.year-btn:hover,
+  .nav-link.current,.dropdown li button.current,.year-btn.active{color:var(--bg);}
+  @media (prefers-reduced-motion:reduce){
+    .nav-link::before,.dropdown li button::before,.year-btn::before{transition:none;}
+  }
+
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;
+    justify-content:space-between;padding:18px 28px;padding-top:calc(18px + env(safe-area-inset-top,0px));
+    background:var(--bg);border-bottom:1px solid var(--line);}
+  .brand{display:flex;align-items:center;padding:0;line-height:0;}
+  .brand svg{display:block;}
+  .nav-toggle{display:none;font-size:1.3rem;}
+  .nav-list{display:flex;align-items:center;gap:6px;}
+  .nav-link{font-family:var(--mono);font-size:.85rem;padding:8px 14px;
+    position:relative;overflow:hidden;}
+  .has-dropdown{position:relative;}
+  .dropdown{position:absolute;top:100%;left:0;background:var(--bg);
+    border:1px solid var(--line);min-width:160px;padding:8px 0;
+    opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s;}
+  .dropdown li button{display:block;width:100%;padding:10px 16px;font-family:var(--mono);font-size:.85rem;
+    position:relative;overflow:hidden;}
+  @media (hover:hover){
+    .has-dropdown:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);transition-delay:0s;}
+  }
+  .has-dropdown.open .dropdown{opacity:1;visibility:visible;transform:translateY(0);transition-delay:0s;}
+
+  main{padding-top:78px;}
+  .view{display:none;}
+  .view.active{display:block;}
+  .view.animate-in{animation:viewIn .4s ease both;}
+  .view.animate-out{animation:viewOut .3s ease both;}
+  @keyframes viewIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes viewOut{from{opacity:1;transform:translateY(0);}to{opacity:0;transform:translateY(-10px);}}
+  @media (prefers-reduced-motion:reduce){.view.animate-in,.view.animate-out{animation:none;}}
+
+  /* home */
+  #view-home .hero{min-height:calc(100vh - 78px);display:flex;flex-direction:column;
+    justify-content:center;padding:6vw 28px;position:relative;overflow:hidden;}
+  .hero-frag{position:absolute;top:8%;right:4%;width:44vw;max-width:520px;opacity:.55;pointer-events:none;}
+  .hero-frag path{stroke:var(--accent);}
+  .hero h1{font-size:clamp(3rem,10vw,7.5rem);line-height:.9;margin:0 0 18px;font-weight:700;
+    letter-spacing:-.02em;max-width:14ch;}
+  .hero p{font-family:var(--mono);font-size:1rem;max-width:46ch;margin:0;color:var(--ink);opacity:.8;}
+
+  /* work */
+  .work-head{padding:64px 28px 24px;max-width:900px;}
+  .work-head h1{font-size:clamp(2rem,5vw,3.2rem);margin:0 0 10px;}
+  .work-head p{font-family:var(--mono);font-size:.9rem;opacity:.75;margin:0;max-width:60ch;}
+  .work-body{display:flex;gap:0;border-top:1px solid var(--line);}
+  .year-list{flex:0 0 120px;padding:24px 0;border-right:1px solid var(--line);}
+  .year-btn{font-family:var(--mono);font-size:.95rem;padding:9px 28px;width:100%;opacity:.55;
+    position:relative;overflow:hidden;}
+  .year-btn:hover{opacity:1;}
+  .year-btn.active{opacity:1;}
+  .project-list{flex:1;padding:8px 0;}
+  .project-item{border-bottom:1px solid var(--line);}
+  .project-row{display:flex;gap:28px;align-items:baseline;padding:20px 28px;width:100%;cursor:pointer;}
+  .project-row:hover{background:var(--panel);}
+  .project-year{font-family:var(--mono);font-size:.85rem;opacity:.55;flex:0 0 48px;}
+  .project-title{font-weight:500;font-size:1.15rem;flex:0 0 auto;min-width:220px;}
+  .project-desc{font-family:var(--mono);font-size:.85rem;opacity:.7;}
+  .project-toggle{margin-left:auto;font-family:var(--mono);font-size:1.1rem;opacity:.55;
+    flex:0 0 auto;transition:transform .3s ease;}
+  .project-item.open .project-toggle{transform:rotate(45deg);}
+  .project-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease;}
+  .project-item.open .project-panel{grid-template-rows:1fr;}
+  .project-panel-inner{overflow:hidden;}
+  .project-panel-inner p{margin:0;padding:0 28px 24px;font-size:.95rem;line-height:1.6;max-width:60ch;opacity:.85;}
+  @media (prefers-reduced-motion:reduce){.project-panel{transition:none;}}
+  @media (max-width:720px){
+    .project-row{flex-wrap:wrap;} .project-title{min-width:auto;}
+    .year-list{flex-basis:88px;}
+  }
+
+  /* about / contact */
+  .page{padding:100px 28px 80px;max-width:640px;}
+  .page h1{font-size:clamp(2rem,5vw,3rem);margin:0 0 24px;}
+  .page p{font-size:1.05rem;line-height:1.65;max-width:58ch;margin:0 0 18px;}
+  .contact-email{font-family:var(--mono);font-size:clamp(1.3rem,4vw,2rem);color:var(--accent);
+    display:inline-block;margin:8px 0 20px;word-break:break-word;}
+  .contact-note{font-family:var(--mono);font-size:.85rem;opacity:.7;}
+
+  footer{border-top:1px solid var(--line);padding:24px 28px calc(24px + env(safe-area-inset-bottom,0px));
+    font-family:var(--mono);font-size:.75rem;opacity:.55;}
+
+  @media (max-width:760px){
+    .nav-toggle{display:block;}
+    .nav-list{position:fixed;top:60px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);
+      flex-direction:column;align-items:flex-start;gap:0;padding:8px 0;max-height:0;overflow:hidden;transition:max-height .25s ease;}
+    .nav-list.open{max-height:400px;}
+    .nav-list li{width:100%;}
+    .nav-link{display:block;width:100%;padding:14px 28px;}
+    .has-dropdown{width:100%;}
+    .dropdown{position:static;border:none;margin:0;padding:0 0 0 14px;
+      opacity:1;visibility:visible;transform:none;transition:none;display:none;}
+    .has-dropdown.open .dropdown{display:block;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <button class="brand" data-view="home" aria-label="Dawn — home">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
+      <path d="M4 27 L15 4 L19 15 L28 10 L18 27 Z" fill="var(--ink)"/>
+    </svg>
+  </button>
+  <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+  <ul class="nav-list">
+    <li class="has-dropdown">
+      <button class="nav-link dropdown-btn" aria-haspopup="true" aria-expanded="false">Work</button>
+      <ul class="dropdown">
+        <li><button data-view="architecture">Architecture</button></li>
+        <li><button data-view="design">Design</button></li>
+        <li><button data-view="research">Research</button></li>
+        <li><button data-view="extra">Extra</button></li>
+      </ul>
+    </li>
+    <li><button class="nav-link" data-view="about">About</button></li>
+    <li><button class="nav-link" data-view="contact">Contact</button></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="view-home" class="view active">
+    <div class="hero">
+      <svg class="hero-frag" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="1.4">
+        <path d="M40 30 L210 70 L180 220 L330 190 L300 360"/>
+        <path d="M210 70 L60 160 L180 220"/>
+        <path d="M180 220 L120 340 L300 360"/>
+        <path d="M330 190 L390 90"/>
+      </svg>
+      <h1>Dawn</h1>
+      <p>Computational and deconstructivist design — generative geometry, fragmented form, code-driven systems.</p>
+    </div>
+  </section>
+
+  <section id="view-work" class="view">
+    <div id="work-content">
+      <div class="work-head">
+        <h1 id="work-title"></h1>
+        <p id="work-intro"></p>
+      </div>
+      <div class="work-body">
+        <aside class="year-list" id="year-list"></aside>
+        <div class="project-list" id="project-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-about" class="view">
+    <div class="page">
+      <h1>About</h1>
+      <p>I'm Dawn, an architecture student working across computational and deconstructivist design — moving between generative geometry, fragmented form, and code-driven systems.</p>
+      <p>Coursework sits in a French-language academic context, spanning building construction and structural engineering, alongside independent experiments in Grasshopper, GLSL, and procedural graphics.</p>
+    </div>
+  </section>
+
+  <section id="view-contact" class="view">
+    <div class="page">
+      <h1>Contact</h1>
+      <a class="contact-email" href="mailto:hello@dawn-studio.com">hello@dawn-studio.com</a>
+      <p class="contact-note">Open to architecture internship and junior-role opportunities.</p>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> Dawn</footer>
+
+<script>
+const WORK = {
+  architecture: {
+    label: 'Architecture',
+    intro: 'Studio and independent projects exploring fractured massing and fragmented form.',
+    projects: [
+      {year:2026, title:'Fragment Pavilion', desc:'Studio project — faceted envelope study',
+        detail:'A studio brief pushed toward a faceted, load-bearing envelope. Replace this with your process notes, drawings, and renders.'},
+      {year:2025, title:'Threshold House', desc:'Competition entry — site-fractured massing',
+        detail:'A competition entry testing a massing split by an internal fault line. Add plans, sections, and jury feedback here.'},
+      {year:2024, title:'Undercroft', desc:'Adaptive reuse study',
+        detail:'An adaptive-reuse study for a below-grade civic space. Swap in images and a short write-up.'}
+    ]
+  },
+  design: {
+    label: 'Design',
+    intro: 'Generative and computational design work.',
+    projects: [
+      {year:2026, title:'Faceted Shard Panel System', desc:'Generative hard-surface panelling — Grasshopper, Rhino 8',
+        detail:'A generative hard-surface panel system built in Grasshopper for Rhino 8, using Voronoi fragmentation in UV space with a GhPython script handling plane fitting, normal-to-tangent blending, jitter rotation, and solid thickening.'},
+      {year:2025, title:'Voronoi Facade Study', desc:'UV-space fragmentation into paneled surface',
+        detail:'An earlier pass at the same fragmentation logic, applied to a paneled facade surface. Add renders or a definition breakdown.'}
+    ]
+  },
+  research: {
+    label: 'Research',
+    intro: 'Simulation and material-behaviour studies.',
+    projects: [
+      {year:2025, title:'Wind Propagation Field Study', desc:'Vector-field displacement across a point matrix — Grasshopper',
+        detail:'Wind propagation simulated across a point matrix using vector-field displacement in Grasshopper. Add your visualisations or a short methodology note.'},
+      {year:2024, title:'Fracture Notes', desc:'Material behaviour under fragmentation',
+        detail:'Notes on how materials behave under fragmentation. Add sketches, references, or test results.'}
+    ]
+  },
+  extra: {
+    label: 'Extra',
+    intro: 'Creative coding — procedural graphics and audio-visual work.',
+    projects: [
+      {year:2026, title:'Audio-Reactive Terrain', desc:'Raymarched SDF terrain driven by the Web Audio API — GLSL',
+        detail:'Raymarched SDF terrain with fbm-driven displacement, reacting to audio input via the Web Audio API. Add a video or a shader breakdown.'},
+      {year:2025, title:'Fbm Studies', desc:'Procedural noise experiments — GLSL',
+        detail:'Procedural noise experiments in GLSL. Add a clip or a code snippet.'}
+    ]
+  }
+};
+
+function fadeReplace(el, updateFn, dur){
+  dur = dur || 200;
+  el.style.transition = 'opacity ' + dur + 'ms ease';
+  el.style.opacity = 0;
+  setTimeout(()=>{
+    updateFn();
+    requestAnimationFrame(()=>{ el.style.opacity = 1; });
+  }, dur);
+}
+
+function renderWork(cat){
+  const data = WORK[cat];
+  document.getElementById('work-title').textContent = data.label;
+  document.getElementById('work-intro').textContent = data.intro;
+  const years = [...new Set(data.projects.map(p=>p.year))].sort((a,b)=>b-a);
+  const yearList = document.getElementById('year-list');
+  yearList.innerHTML = '<button class="year-btn active" data-year="all">All</button>' +
+    years.map(y=>`<button class="year-btn" data-year="${y}">${y}</button>`).join('');
+  renderProjects(data.projects,'all');
+  yearList.querySelectorAll('.year-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      yearList.querySelectorAll('.year-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      fadeReplace(document.getElementById('project-list'), ()=>renderProjects(data.projects, btn.dataset.year));
+    });
+  });
+}
+function renderProjects(list, year){
+  const filtered = year==='all' ? list : list.filter(p=>String(p.year)===String(year));
+  const container = document.getElementById('project-list');
+  container.innerHTML = filtered.map(p=>`
+    <div class="project-item">
+      <button class="project-row" aria-expanded="false">
+        <span class="project-year">${p.year}</span>
+        <span class="project-title">${p.title}</span>
+        <span class="project-desc">${p.desc}</span>
+        <span class="project-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="project-panel">
+        <div class="project-panel-inner"><p>${p.detail}</p></div>
+      </div>
+    </div>`).join('');
+  container.querySelectorAll('.project-row').forEach(row=>{
+    row.addEventListener('click',()=>{
+      const item = row.closest('.project-item');
+      const open = item.classList.toggle('open');
+      row.setAttribute('aria-expanded', open);
+    });
+  });
+}
+
+function closeMobileNav(){
+  document.querySelector('.nav-list').classList.remove('open');
+  document.querySelector('.has-dropdown').classList.remove('open');
+}
+function showView(view){
+  const targetId = WORK[view] ? 'view-work' : 'view-'+view;
+  const incoming = document.getElementById(targetId);
+  const outgoing = document.querySelector('.view.active');
+
+  function reveal(){
+    if(WORK[view]) renderWork(view);
+    incoming.classList.remove('animate-out');
+    incoming.classList.add('active');
+    void incoming.offsetWidth;
+    incoming.classList.add('animate-in');
+    window.scrollTo(0,0);
+  }
+
+  if(outgoing && outgoing === incoming){
+    if(WORK[view]) fadeReplace(document.getElementById('work-content'), ()=>renderWork(view));
+    window.scrollTo(0,0);
+  } else if(outgoing){
+    outgoing.classList.remove('animate-in');
+    outgoing.classList.add('animate-out');
+    setTimeout(()=>{
+      outgoing.classList.remove('active','animate-out');
+      reveal();
+    }, 300);
+  } else {
+    reveal();
+  }
+
+  document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('current', b.dataset.view===view));
+  document.querySelector('.dropdown-btn').classList.toggle('current', !!WORK[view]);
+  closeMobileNav();
+}
+document.querySelectorAll('[data-view]').forEach(btn=>{
+  btn.addEventListener('click',()=>showView(btn.dataset.view));
+});
+document.querySelector('.dropdown-btn').addEventListener('click',(e)=>{
+  e.stopPropagation();
+  document.querySelector('.has-dropdown').classList.toggle('open');
+});
+document.addEventListener('click',()=>{
+  document.querySelector('.has-dropdown').classList.remove('open');
+});
+document.querySelector('.nav-toggle').addEventListener('click',()=>{
+  document.querySelector('.nav-list').classList.toggle('open');
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('view-home').classList.add('animate-in');
+</script>
+</body>
+</html>

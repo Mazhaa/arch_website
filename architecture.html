@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Aktan Serkan - Portfolio</title>
+<title>Architecture - Aktan Serkan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-work="architecture">
 
 <div id="cursor-line-v"></div>
 <div id="cursor-line-h"></div>
@@ -24,9 +24,9 @@
   <button class="nav-toggle" aria-label="Toggle menu">☰</button>
   <ul class="nav-list">
     <li class="has-dropdown">
-      <button class="nav-link dropdown-btn " aria-haspopup="true" aria-expanded="false">Work</button>
+      <button class="nav-link dropdown-btn current" aria-haspopup="true" aria-expanded="false">Work</button>
       <ul class="dropdown">
-        <li><a href="architecture.html" class="" data-wipe>Architecture</a></li>
+        <li><a href="architecture.html" class="current" data-wipe>Architecture</a></li>
         <li><a href="design.html" class="" data-wipe>Design</a></li>
         <li><a href="research.html" class="" data-wipe>Research</a></li>
         <li><a href="extra.html" class="" data-wipe>Extra</a></li>
@@ -38,10 +38,16 @@
 </nav>
 
 <main>
-  <section id="view-home" class="view">
-    <div class="hero">
-      <h1>Aktan Serkan</h1>
-      <p>Speculative Architecture - Narrative Systems - Synthetic Constructs</p>
+  <section id="view-work" class="view">
+    <div id="work-content">
+      <div class="work-head">
+        <h1 id="work-title"></h1>
+        <p id="work-intro"></p>
+      </div>
+      <div class="work-body">
+        <aside class="year-list" id="year-list"></aside>
+        <div class="project-list" id="project-list"></div>
+      </div>
     </div>
   </section>
 </main>

@@ -4,17 +4,17 @@ const WORK = {
     intro: 'Studio and independent projects exploring fractured massing and fragmented form.',
     projects: [
       {year:2026, title:'RE:FLUX', desc:'Studio Project — Collective Housing',
-        detail:'Located in Milan, Re:Flux explores the relationships between environmental forces, urban flow and collective housing. Set within a landscape shaped by old infrastructure and modern transformations, the project takes wind, sunlight and human movement as active parameters in the design process, shaping a vertical residential structure in which the organisation of spa ce responds to the forces acting upon it.',
+        detail:'Located in Milan, Re:Flux explores the relationships between environmental forces, urban flow and collective housing. Set within a landscape shaped by old infrastructure and modern transformations, the project takes wind, sunlight and human movement as active parameters in the design process, shaping a vertical residential structure in which the organisation of space responds to the forces acting upon it.',
       images:[
         {src:'../img/reflux/maquette.jpg', title:'3D Printed Model - PLA - 1:200'},
         {src:'../img/reflux/globalplan.jpg', title:'Global Plan'}],
       detail:'The site is understood as a field of intersecting flows. Urban circulation and human movement coexist with atmospheric conditions, particularly the dominant north–south winds and the variations in solar exposure. Rather than treating these forces as external constraints, the project translates them into design parameters. The site becomes an active system through which the architectural form is generated and organised.',
       images:[
-        {src:'..img/reflux/siteplan.jpg', title:'Site Plan'},
-        {src:'..img/reflux/process1.jpg', title:'Building footprint extruded up.'},
-        {src:'..img/reflux/process2.jpg', title:'Initial geometry ensuring visual integration and GFA respect.'},
-        {src:'..img/reflux/process3.jpg', title:'Carving under the effect of wind forces Ensures even distribution of GFA through all the units.'},
-        {src:'..img/reflux/process4.jpg', title:'Programmtic vector shaping the ground floor.'}],
+        {src:'../img/reflux/siteplan.jpg', title:'Site Plan'},
+        {src:'../img/reflux/process1.jpg', title:'Building footprint extruded up.'},
+        {src:'../img/reflux/process2.jpg', title:'Initial geometry ensuring visual integration and GFA respect.'},
+        {src:'../img/reflux/process3.jpg', title:'Carving under the effect of wind forces. Ensures even distribution of GFA through all the units.'},
+        {src:'../img/reflux/process4.jpg', title:'Programmatic vector shaping the ground floor.'}],
       detail:'Floor Plans',
   
       

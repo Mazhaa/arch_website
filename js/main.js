@@ -18,7 +18,14 @@ const WORK = {
     intro: 'Generative and computational design work.',
     projects: [
       {year:'202X', title:'ABERRATION SERIES', desc:'Procedural Primitives',
-        detail:'A series of procedural primitives. Add renders or a definition breakdown.'},
+        detail:'This series tries to explore the limits of procedurally manipulated primitives and their expression. Manually altered geometries intertwine with each other, creating spaces and forms never achievable before. Ambiances are introduced through exotic and eccentric colores and textures, combining personal references with a homogeneous touch.',
+        images:[
+          {src:'../img/aberration/1-kos-x-ch.jpg', title:'KOS X CH'},
+          {src:'../img/aberration/2-axaria.jpg', title:'AxaRia'},
+          {src:'../img/aberration/3-grave.jpg', title:'GRaVE'},
+          {src:'../img/aberration/4-glance-part1.jpg', title:'GLANCE PART.1'},
+          {src:'../img/aberration/5-steeps.jpg', title:'ST[EE]PS'}
+        ]},
       {year:2026, title:'GROWTH', desc:'Procedural Architecture',
         detail:'Procedural architecture study. Add renders or a definition breakdown.'}
     ]
@@ -84,7 +91,7 @@ function renderProjects(list, year){
         <span class="project-toggle" aria-hidden="true">+</span>
       </button>
       <div class="project-panel">
-        <div class="project-panel-inner"><p>${p.detail}</p></div>
+        <div class="project-panel-inner"><p>${p.detail}</p>${p.images ? galleryHTML(p.images) : ''}</div>
       </div>
     </div>`).join('');
   container.querySelectorAll('.project-row').forEach(row=>{
@@ -94,6 +101,97 @@ function renderProjects(list, year){
       row.setAttribute('aria-expanded', open);
     });
   });
+  container.querySelectorAll('.gallery').forEach(initGallery);
+}
+
+/* ---------- image gallery (horizontal slider + full-screen view) ---------- */
+function galleryHTML(images){
+  return `<div class="gallery">
+    <button class="gal-arrow gal-prev" aria-label="Previous image">←</button>
+    <div class="gal-track">` + images.map((im,i)=>`
+      <figure class="gal-slide">
+        <button class="gal-open" data-i="${i}" aria-label="View ${im.title} full screen">
+          <img src="${im.src}" alt="${im.title}" loading="lazy">
+        </button>
+        <figcaption>${im.title}</figcaption>
+      </figure>`).join('') + `
+    </div>
+    <button class="gal-arrow gal-next" aria-label="Next image">→</button>
+  </div>`;
+}
+
+function initGallery(gal){
+  const track = gal.querySelector('.gal-track');
+  const prev = gal.querySelector('.gal-prev');
+  const next = gal.querySelector('.gal-next');
+  const slides = gal.querySelectorAll('.gal-slide');
+  const items = [...slides].map(s=>({
+    src: s.querySelector('img').getAttribute('src'),
+    title: s.querySelector('figcaption').textContent
+  }));
+  function sync(){
+    const max = track.scrollWidth - track.clientWidth - 2;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max;
+  }
+  prev.addEventListener('click',()=>track.scrollBy({left:-track.clientWidth, behavior:'smooth'}));
+  next.addEventListener('click',()=>track.scrollBy({left: track.clientWidth, behavior:'smooth'}));
+  track.addEventListener('scroll',sync,{passive:true});
+  window.addEventListener('resize',sync);
+  sync();
+  gal.querySelectorAll('.gal-open').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      openLightbox(items, +btn.dataset.i, i=>{
+        track.scrollTo({left: i*track.clientWidth, behavior:'auto'});
+      });
+    });
+  });
+}
+
+let lb = null;
+function openLightbox(items, start, onClose){
+  if(!lb){
+    const el = document.createElement('div');
+    el.className = 'lightbox';
+    el.setAttribute('role','dialog');
+    el.setAttribute('aria-modal','true');
+    el.setAttribute('aria-hidden','true');
+    el.innerHTML = `
+      <button class="lb-close" aria-label="Close">×</button>
+      <button class="lb-arrow lb-prev" aria-label="Previous image">←</button>
+      <figure class="lb-figure"><img alt=""><figcaption></figcaption></figure>
+      <button class="lb-arrow lb-next" aria-label="Next image">→</button>`;
+    document.body.appendChild(el);
+    lb = {el, img: el.querySelector('img'), cap: el.querySelector('figcaption'), items:[], i:0, onClose:null};
+    el.querySelector('.lb-prev').addEventListener('click',e=>{e.stopPropagation(); lbShow(lb.i-1);});
+    el.querySelector('.lb-next').addEventListener('click',e=>{e.stopPropagation(); lbShow(lb.i+1);});
+    el.querySelector('.lb-close').addEventListener('click',closeLightbox);
+    el.addEventListener('click',e=>{ if(e.target.closest('img, .lb-arrow, .lb-close, figcaption')) return; closeLightbox(); });
+    document.addEventListener('keydown',e=>{
+      if(!lb.el.classList.contains('open')) return;
+      if(e.key==='Escape') closeLightbox();
+      else if(e.key==='ArrowLeft') lbShow(lb.i-1);
+      else if(e.key==='ArrowRight') lbShow(lb.i+1);
+    });
+  }
+  lb.items = items; lb.onClose = onClose;
+  lbShow(start);
+  lb.el.classList.add('open');
+  lb.el.setAttribute('aria-hidden','false');
+  document.documentElement.style.overflow = 'hidden';
+}
+function lbShow(i){
+  const n = lb.items.length;
+  lb.i = (i + n) % n;
+  lb.img.src = lb.items[lb.i].src;
+  lb.img.alt = lb.items[lb.i].title;
+  lb.cap.textContent = lb.items[lb.i].title;
+}
+function closeLightbox(){
+  lb.el.classList.remove('open');
+  lb.el.setAttribute('aria-hidden','true');
+  document.documentElement.style.overflow = '';
+  if(lb.onClose) lb.onClose(lb.i);
 }
 
 function closeMobileNav(){

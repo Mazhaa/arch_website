@@ -166,3 +166,33 @@
     #cursor-plus .glyph::after{top:50%;left:0;right:0;height:1.4px;transform:translateY(-50%);}
     #cursor-plus.active .glyph{transform:translate(-50%,-50%) rotate(45deg);}
   }
+
+  /* project image gallery */
+  .gallery{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;align-items:center;padding:8px 8px 32px;}
+  .gal-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;}
+  .gal-track::-webkit-scrollbar{display:none;}
+  .gal-slide{flex:0 0 100%;margin:0;scroll-snap-align:center;display:flex;flex-direction:column;align-items:center;}
+  .gal-open{display:block;height:min(62vh,540px);max-width:100%;}
+  .gal-open img{display:block;height:100%;width:auto;max-width:100%;object-fit:contain;}
+  .gal-slide figcaption{margin-top:14px;font-family:var(--mono);font-size:.8rem;letter-spacing:.04em;text-align:center;}
+  .gal-arrow{font-family:var(--mono);font-size:1.4rem;text-align:center;padding:12px 0;opacity:.55;transition:opacity .2s ease;}
+  .gal-arrow:hover{opacity:1;}
+  .gal-arrow:disabled{opacity:.15;pointer-events:none;}
+  @media (max-width:720px){.gallery{grid-template-columns:34px minmax(0,1fr) 34px;padding-left:0;padding-right:0;}}
+
+  /* full-screen viewer */
+  .lightbox{position:fixed;inset:0;z-index:200;background:#080808;color:#fff;display:flex;
+    align-items:center;justify-content:center;gap:12px;
+    padding:env(safe-area-inset-top,0px) 12px env(safe-area-inset-bottom,0px);
+    opacity:0;visibility:hidden;transition:opacity .25s ease,visibility 0s linear .25s;}
+  .lightbox.open{opacity:1;visibility:visible;transition-delay:0s;}
+  .lightbox :focus-visible{outline-color:#fff;}
+  .lb-figure{margin:0;flex:0 1 auto;min-width:0;display:flex;flex-direction:column;align-items:center;}
+  .lb-figure img{display:block;max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;}
+  .lb-figure figcaption{margin-top:16px;font-family:var(--mono);font-size:.8rem;letter-spacing:.04em;text-align:center;}
+  .lb-arrow{flex:0 0 48px;font-family:var(--mono);font-size:1.6rem;text-align:center;padding:16px 0;opacity:.6;transition:opacity .2s ease;}
+  .lb-arrow:hover{opacity:1;}
+  .lb-close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:22px;
+    font-family:var(--mono);font-size:2rem;line-height:1;padding:6px 10px;opacity:.7;transition:opacity .2s ease;}
+  .lb-close:hover{opacity:1;}
+  @media (max-width:720px){.lb-arrow{flex-basis:32px;}}

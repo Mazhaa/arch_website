@@ -31,26 +31,6 @@ const WORK = {
         video:'../video/growth.mp4'}
     ]
   },
-  research: {
-    label: 'Research',
-    intro: 'Simulation and material-behaviour studies.',
-    projects: [
-      {year:2025, title:'Wind Propagation Field Study', desc:'Vector-field displacement across a point matrix — Grasshopper',
-        detail:'Wind propagation simulated across a point matrix using vector-field displacement in Grasshopper. Add your visualisations or a short methodology note.'},
-      {year:2024, title:'Fracture Notes', desc:'Material behaviour under fragmentation',
-        detail:'Notes on how materials behave under fragmentation. Add sketches, references, or test results.'}
-    ]
-  },
-  extra: {
-    label: 'Extra',
-    intro: 'Creative coding — procedural graphics and audio-visual work.',
-    projects: [
-      {year:2026, title:'Audio-Reactive Terrain', desc:'Raymarched SDF terrain driven by the Web Audio API — GLSL',
-        detail:'Raymarched SDF terrain with fbm-driven displacement, reacting to audio input via the Web Audio API. Add a video or a shader breakdown.'},
-      {year:2025, title:'Fbm Studies', desc:'Procedural noise experiments — GLSL',
-        detail:'Procedural noise experiments in GLSL. Add a clip or a code snippet.'}
-    ]
-  }
 };
 
 function fadeReplace(el, updateFn, dur){

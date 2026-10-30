@@ -4,27 +4,37 @@ const WORK = {
     intro: 'Studio and independent projects exploring fractured massing and fragmented form.',
     projects: [
       {year:2026, title:'RE:FLUX', desc:'Studio Project — Collective Housing',
-        detail:'Located in Milan, Re:Flux explores the relationships between environmental forces, urban flow and collective housing. Set within a landscape shaped by old infrastructure and modern transformations, the project takes wind, sunlight and human movement as active parameters in the design process, shaping a vertical residential structure in which the organisation of space responds to the forces acting upon it.',
-      images:[
-        {src:'../img/reflux/maquette.jpg', title:'3D Printed Model - PLA - 1:200'},
-        {src:'../img/reflux/globalplan.jpg', title:'Global Plan'}],
-      detail:'The site is understood as a field of intersecting flows. Urban circulation and human movement coexist with atmospheric conditions, particularly the dominant north–south winds and the variations in solar exposure. Rather than treating these forces as external constraints, the project translates them into design parameters. The site becomes an active system through which the architectural form is generated and organised.',
-      images:[
-        {src:'../img/reflux/siteplan.jpg', title:'Site Plan'},
-        {src:'../img/reflux/process1.jpg', title:'Building footprint extruded up.'},
-        {src:'../img/reflux/process2.jpg', title:'Initial geometry ensuring visual integration and GFA respect.'},
-        {src:'../img/reflux/process3.jpg', title:'Carving under the effect of wind forces. Ensures even distribution of GFA through all the units.'},
-        {src:'../img/reflux/process4.jpg', title:'Programmatic vector shaping the ground floor.'}],
-      detail:'Floor Plans',
-  
+        blocks:[
+          {text:'Located in Milan, Re:Flux explores the relationships between environmental forces, urban flow and collective housing. Set within a landscape shaped by old infrastructure and modern transformations, the project takes wind, sunlight and human movement as active parameters in the design process, shaping a vertical residential structure in which the organisation of space responds to the forces acting upon it.'},
+          {images:[
+            {src:'../img/reflux/maquette.jpg', title:'3D Printed Model - PLA - 1:200'},
+            {src:'../img/reflux/globalplan.jpg', title:'Global Plan'}
+          ]},
+          {text:'The site is understood as a field of intersecting flows. Urban circulation and human movement coexist with atmospheric conditions, particularly the dominant north–south winds and the variations in solar exposure. Rather than treating these forces as external constraints, the project translates them into design parameters. The site becomes an active system through which the architectural form is generated and organised.'},
+          {images:[
+            {src:'../img/reflux/siteplan.jpg', title:'Site Plan'},
+            {src:'../img/reflux/process1.jpg', title:'Building footprint extruded up.'},
+            {src:'../img/reflux/process2.jpg', title:'Initial geometry ensuring visual integration and GFA respect.'},
+            {src:'../img/reflux/process3.jpg', title:'Carving under the effect of wind forces. Ensures even distribution of GFA through all the units.'},
+            {src:'../img/reflux/process4.jpg', title:'Programmatic vector shaping the ground floor.'}
+          ]},
+          {text:'Floor Plans'}
+        ]},
       
-  },
       {year:2025, title:'CHIAROSCURO', desc:'Studio Project — Concert Hall',
-        detail:'Studio project on a concert hall. Add plans, sections, and renders here.'},
+        blocks:[
+          {text:'Studio project on a concert hall. Add plans, sections, and renders here.'}
+        ]},
+      
       {year:2025, title:'STRUCTURAL STUDY', desc:'Studio Project — Systemic Study',
-        detail:'Studio project as a systemic study. Add diagrams, models, and notes here.'},
+        blocks:[
+          {text:'Studio project as a systemic study. Add diagrams, models, and notes here.'}
+        ]},
+      
       {year:2024, title:'ALTORIS', desc:'Studio Project — Observation Site',
-        detail:'Studio project on an observation site. Swap in images and a short write-up.'}
+        blocks:[
+          {text:'Studio project on an observation site. Swap in images and a short write-up.'}
+        ]}
     ]
   },
   design: {
@@ -32,19 +42,23 @@ const WORK = {
     intro: 'Generative and computational design work.',
     projects: [
       {year:'202X', title:'ABERRATION SERIES', desc:'Procedural Primitives',
-        detail:'This series tries to explore the limits of procedurally manipulated primitives and their expression. Manually altered geometries intertwine with each other, creating spaces and forms never achievable before. Ambiances are introduced through exotic and eccentric colores and textures, combining personal references with a homogeneous touch.',
-        images:[
-          {src:'../img/aberration/1-kos-x-ch.jpg', title:'KOS X CH'},
-          {src:'../img/aberration/2-axaria.jpg', title:'AxaRia'},
-          {src:'../img/aberration/3-grave.jpg', title:'GRaVE'},
-          {src:'../img/aberration/4-glance-part1.jpg', title:'GLANCE PART.1'},
-          {src:'../img/aberration/5-steeps.jpg', title:'ST[EE]PS'}
+        blocks:[
+          {text:'This series tries to explore the limits of procedurally manipulated primitives and their expression. Manually altered geometries intertwine with each other, creating spaces and forms never achievable before. Ambiances are introduced through exotic and eccentric colores and textures, combining personal references with a homogeneous touch.'},
+          {images:[
+            {src:'../img/aberration/1-kos-x-ch.jpg', title:'KOS X CH'},
+            {src:'../img/aberration/2-axaria.jpg', title:'AxaRia'},
+            {src:'../img/aberration/3-grave.jpg', title:'GRaVE'},
+            {src:'../img/aberration/4-glance-part1.jpg', title:'GLANCE PART.1'},
+            {src:'../img/aberration/5-steeps.jpg', title:'ST[EE]PS'}
+          ]}
         ]},
       {year:2026, title:'GROWTH', desc:'Procedural Architecture',
-        detail:'Investigating the interactions between humans and their surroundings, this procedurally generated animation cites the possibilities of a living architecture. The geometries shift, grow, and change with human movement, adapting itself to the living being, raising the following tquestion:<br>Should architecture adapt to humans, or should it be the other way around?',
-        video:'../video/growth.mp4'}
+        blocks:[
+          {text:'Investigating the interactions between humans and their surroundings, this procedurally generated animation cites the possibilities of a living architecture. The geometries shift, grow, and change with human movement, adapting itself to the living being, raising the following tquestion:<br>Should architecture adapt to humans, or should it be the other way around?'},
+          {video:'../video/growth.mp4'}
+        ]}
     ]
-  },
+  }
 };
 
 function fadeReplace(el, updateFn, dur){
@@ -74,6 +88,17 @@ function renderWork(cat){
     });
   });
 }
+function blocksHTML(p){
+  if(!p.blocks){
+    return `<p>${p.detail}</p>${p.images ? galleryHTML(p.images) : ''}${p.video ? videoHTML(p.video) : ''}`;
+  }
+  return p.blocks.map(b =>
+    b.text ? `<p>${b.text}</p>` :
+    b.images ? galleryHTML(b.images) :
+    b.video ? videoHTML(b.video) : ''
+  ).join('');
+}
+
 function renderProjects(list, year){
   const filtered = year==='all' ? list : list.filter(p=>String(p.year)===String(year));
   const container = document.getElementById('project-list');
@@ -86,7 +111,7 @@ function renderProjects(list, year){
         <span class="project-toggle" aria-hidden="true">+</span>
       </button>
       <div class="project-panel">
-        <div class="project-panel-inner"><p>${p.detail}</p>${p.images ? galleryHTML(p.images) : ''}${p.video ? videoHTML(p.video) : ''}</div>
+        <div class="project-panel-inner">${blocksHTML(p)}</div>
       </div>
     </div>`).join('');
   container.querySelectorAll('.project-row').forEach(row=>{

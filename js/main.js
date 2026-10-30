@@ -27,7 +27,8 @@ const WORK = {
           {src:'../img/aberration/5-steeps.jpg', title:'ST[EE]PS'}
         ]},
       {year:2026, title:'GROWTH', desc:'Procedural Architecture',
-        detail:'Procedural architecture study. Add renders or a definition breakdown.'}
+        detail:'Investigating the interactions between humans and their surroundings, this procedurally generated animation cites the possibilities of a living architecture. The geometries shift, grow, and change with human movement, adapting itself to the living being, raising the following tquestion:<br>Should architecture adapt to humans, or should it be the other way around?',
+        video:'../video/growth.mp4'}
     ]
   },
   research: {
@@ -91,7 +92,7 @@ function renderProjects(list, year){
         <span class="project-toggle" aria-hidden="true">+</span>
       </button>
       <div class="project-panel">
-        <div class="project-panel-inner"><p>${p.detail}</p>${p.images ? galleryHTML(p.images) : ''}</div>
+        <div class="project-panel-inner"><p>${p.detail}</p>${p.images ? galleryHTML(p.images) : ''}${p.video ? videoHTML(p.video) : ''}</div>
       </div>
     </div>`).join('');
   container.querySelectorAll('.project-row').forEach(row=>{
@@ -99,9 +100,25 @@ function renderProjects(list, year){
       const item = row.closest('.project-item');
       const open = item.classList.toggle('open');
       row.setAttribute('aria-expanded', open);
+      const vid = item.querySelector('video');
+      if(vid && open) vid.play().catch(()=>{});
     });
   });
   container.querySelectorAll('.gallery').forEach(initGallery);
+  container.querySelectorAll('.project-video').forEach(v=>{
+    const fit = ()=>{ if(v.videoWidth) v.style.aspectRatio = v.videoWidth + ' / ' + v.videoHeight; };
+    v.addEventListener('loadedmetadata', fit);
+    if(v.readyState >= 1) fit();
+  });
+}
+
+/* ---------- looping, non-interactive video ---------- */
+function videoHTML(src){
+  return `<div class="video-wrap">
+    <video class="project-video" src="${src}" autoplay muted loop playsinline preload="auto"
+      disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate noremoteplayback"
+      tabindex="-1" aria-hidden="true" oncontextmenu="return false"></video>
+  </div>`;
 }
 
 /* ---------- image gallery (horizontal slider + full-screen view) ---------- */

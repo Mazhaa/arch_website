@@ -3,22 +3,24 @@ const WORK = {
     label: 'Architecture',
     intro: 'Studio and independent projects exploring fractured massing and fragmented form.',
     projects: [
-      {year:2026, title:'Fragment Pavilion', desc:'Studio project — faceted envelope study',
-        detail:'A studio brief pushed toward a faceted, load-bearing envelope. Replace this with your process notes, drawings, and renders.'},
-      {year:2025, title:'Threshold House', desc:'Competition entry — site-fractured massing',
-        detail:'A competition entry testing a massing split by an internal fault line. Add plans, sections, and jury feedback here.'},
-      {year:2024, title:'Undercroft', desc:'Adaptive reuse study',
-        detail:'An adaptive-reuse study for a below-grade civic space. Swap in images and a short write-up.'}
+      {year:2026, title:'RE:FLUX', desc:'Studio Project — Collective Housing',
+        detail:'Studio project on collective housing. Replace this with your process notes, drawings, and renders.'},
+      {year:2025, title:'CHIAROSCURO', desc:'Studio Project — Concert Hall',
+        detail:'Studio project on a concert hall. Add plans, sections, and renders here.'},
+      {year:2025, title:'STRUCTURAL STUDY', desc:'Studio Project — Systemic Study',
+        detail:'Studio project as a systemic study. Add diagrams, models, and notes here.'},
+      {year:2024, title:'ALTORIS', desc:'Studio Project — Observation Site',
+        detail:'Studio project on an observation site. Swap in images and a short write-up.'}
     ]
   },
   design: {
     label: 'Design',
     intro: 'Generative and computational design work.',
     projects: [
-      {year:2026, title:'Faceted Shard Panel System', desc:'Generative hard-surface panelling — Grasshopper, Rhino 8',
-        detail:'A generative hard-surface panel system built in Grasshopper for Rhino 8, using Voronoi fragmentation in UV space with a GhPython script handling plane fitting, normal-to-tangent blending, jitter rotation, and solid thickening.'},
-      {year:2025, title:'Voronoi Facade Study', desc:'UV-space fragmentation into paneled surface',
-        detail:'An earlier pass at the same fragmentation logic, applied to a paneled facade surface. Add renders or a definition breakdown.'}
+      {year:'202X', title:'ABERRATION SERIES', desc:'Procedural Primitives',
+        detail:'A series of procedural primitives. Add renders or a definition breakdown.'},
+      {year:2026, title:'GROWTH', desc:'Procedural Architecture',
+        detail:'Procedural architecture study. Add renders or a definition breakdown.'}
     ]
   },
   research: {

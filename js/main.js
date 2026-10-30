@@ -4,7 +4,7 @@ const WORK = {
     intro: 'Studio and independent projects exploring fractured massing and fragmented form.',
     projects: [
       {year:2026, title:'RE:FLUX', desc:'Studio Project — Collective Housing',
-        detail:'Studio project on collective housing. Replace this with your process notes, drawings, and renders.'},
+        detail:'Located in Milan, Re:Flux explores the relationships between environmental forces, urban flow and collective housing. Set within a landscape shaped by old infrastructure and modern transformations, the project takes wind, sunlight and human movement as active parameters in the design process, shaping a vertical residential structure in which the organisation of spa ce responds to the forces acting upon it.'},
       {year:2025, title:'CHIAROSCURO', desc:'Studio Project — Concert Hall',
         detail:'Studio project on a concert hall. Add plans, sections, and renders here.'},
       {year:2025, title:'STRUCTURAL STUDY', desc:'Studio Project — Systemic Study',

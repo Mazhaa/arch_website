@@ -18,38 +18,35 @@ const WORK = {
             {src:'../img/reflux/process3.jpg', title:'Carving under the effect of wind forces. Ensures even distribution of GFA through all the units.'},
             {src:'../img/reflux/process4.jpg', title:'Programmatic vector shaping the ground floor.'}
           ]},
-          {text:'Floor Plans'}
+          {text:'Floor Plans'},
           {images:[
             {src:'../img/reflux/rdc.jpg', title:'Ground Floor Plan - 1:200'},
             {src:'../img/reflux/layout1.jpg', title:'Layout::Floor 1-2-13-14 - 1:200'},
             {src:'../img/reflux/layout2.jpg', title:'Layout::Floor 3 to 12 - 1:200'},
             {src:'../img/reflux/t2.jpg', title:'T2 Type Appartment::45-50m² - 1:200'},
-            {src:'../img/reflux/t3.jpg', title:'T3 Type Appartment::65-70m² - 1:200'}
+            {src:'../img/reflux/t3.jpg', title:'T3 Type Appartment::65-70m² - 1:200'},
             {src:'../img/reflux/t4.jpg', title:'T4 Type Appartment::80-85m² - 1:200'}
           ]},
-          {text:'The central core stabilizes two housing volumes: one supported by a spatial frame, the other sus pended by tension rods. Together, these systems free the ground plane and expose the forces holding the building together as its envelope fragments. Rotating panels form an adaptive second skin, adjusting solar protection throughout the day while allowing residents to control light exposure.'}
+          {text:'The central core stabilizes two housing volumes: one supported by a spatial frame, the other suspended by tension rods. Together, these systems free the ground plane and expose the forces holding the building together as its envelope fragments. Rotating panels form an adaptive second skin, adjusting solar protection throughout the day while allowing residents to control light exposure.'},
           {images:[
-            {src:'../img/reflux/frame.jpg', title:'Space Frame'}
-            {src:'../img/reflux/facade.jpg', title:'Metal Facade'}
-            {src:'../img/reflux/core.jpg', title:'Reinforced Concrete Core + Concrete Floors'}
+            {src:'../img/reflux/frame.jpg', title:'Space Frame'},
+            {src:'../img/reflux/facade.jpg', title:'Metal Facade'},
+            {src:'../img/reflux/core.jpg', title:'Reinforced Concrete Core + Concrete Floors'},
             {src:'../img/reflux/sunp.jpg', title:'Rotating Solar Protections'}
-          ]}
-          {text:''}
+          ]},
           {images:[
             {src:'../img/reflux/render.jpg', title:'Interior Render'}
-            ]}
+          ]}
         ]},
-      
+
       {year:2025, title:'CHIAROSCURO', desc:'Studio Project — Concert Hall',
         blocks:[
           {text:'Studio project on a concert hall. Add plans, sections, and renders here.'}
         ]},
-      
       {year:2025, title:'STRUCTURAL STUDY', desc:'Studio Project — Systemic Study',
         blocks:[
           {text:'Studio project as a systemic study. Add diagrams, models, and notes here.'}
         ]},
-      
       {year:2024, title:'ALTORIS', desc:'Studio Project — Observation Site',
         blocks:[
           {text:'Studio project on an observation site. Swap in images and a short write-up.'}

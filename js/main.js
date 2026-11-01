@@ -41,8 +41,69 @@ const WORK = {
 
       {year:2025, title:'CHIAROSCURO', desc:'Studio Project — Concert Hall',
         blocks:[
-          {text:'Studio project on a concert hall. Add plans, sections, and renders here.'}
+          {text:'Conceived as part of the defensive system surrounding Paris, the Fort d’Aubervilliers was designed to disappear within it. Its architecture follows a fundamental military logic: protect, conceal, control'},
+          {images:[
+            {src:'../img/chiaroscuro/cityplan.jpg', title:'City Plan'}]}
+          {text:'Earth becomes structure, walls become boundaries, openings become points of surveillance, and the horizon becomes an obversation point, anticipating and controling. The fort seems to grow out of the terrain. Its masses are low, heavy and directional, merging slopes, embankments and masonry into a continuous relationship between building and ground.'},
+          {images:[
+            {src:'../img/chiaroscuro/fort1.jpg', title:'Historical Perimeter'},
+            {src:'../img/chiaroscuro/fort2.jpg', title:'Defensive Walls'},
+            {src:'../img/chiaroscuro/fort3.jpg', title:'Surveillance Strategy'}
+          ]},
+          {text:'This relationship between architecture, ground and force became the starting point of the project. Rather than re producing the fort’s historical appearance, I sought to reinterpret its underlying principles heaviness, concealment, protection and orientation through a contemporary architectural language. My main research was to ask myself : “What happens when this defensive logic is no longer expressed through primitives, but through the form of the building itself?”'},
+          {images:[
+            {src:'../img/chiaroscuro/history.jpg', title:'History'}
+          ]},
+          {images:[
+            {src:'../img/chiaroscuro/fort_img_1.jpg', title:'Gendarmerie Tower Entrance - Courtesy of Aubervilliers City'},
+            {src:'../img/chiaroscuro/fort_img_2.jpg', title:'Inside the Fort - Courtesy of Aubervilliers City'}
+          ]},
+          {text:'The building’s initial geometry emerges from a process of generative sectioning. Using TouchDesigner, fragments of artcore compositions, where electronic music meets classical, are transformed into three-dimensional spectrograms.'},
+          {images:[
+            {src:'../img/chiaroscuro/spectrogram.jpg', title:'Spectrogram - Netzach by AcuticNotes - Section Throughout'}
+          ]},
+          {text:'By taking sections through these volumes, I obtained a series of sinusoidal curves, each representing a different section of the sound-derived geometry.'},
+          {images:[
+            {src:'..img/chiaroscuro/addition.jpg', title:'Curve Summation (Non Exhaustive)'},
+            {src:'..img/chiaroscuro/result.jpg', title:'Curve Summation Result'}
+          ]},
+          {text:'These curves are then combined through a script that subdivides them point by point before respectively adding them, parameter by parameter, following the equation :'},
+          {images:[
+            {src:'..img/chiaroscuro/equation.jpg', title:'Equation'},
+            {src:'..img/chiaroscuro/pointsum', title:'Point Wise Sum'}
+          ]},
+          {text:'The resulting object consists of a continuous envelope that is faceted to obtain a cohesive result.'},
+          {images:[
+            {src:'..img/chiaroscuro/cresult.jpg', title:'Continuous Curve - Resulting Shell'},
+            {src:'..img/chiaroscuro/aresult.jpg', title:'Angular Curve - Resulting Shell'}
+          ]},
+          {text:'Geographicaly, the nearby south garden reveals an opportunity to establish a stronger relationship between the intervention and its landscape, while working on the human circulation, the analysis of the horizon as a field established itself, bridging the existing history and newer data.'},
+          {images:[
+            {src:'..img/chiaroscuro/siteplan.jpg', title:'Site Plan'}
+          ]},
+          {text:'The site derived field (2D) intersects itself with the preceeding sound field (2D), giving birth to the architectural experience as a whole : A three dimensional volume enhanced with a temporal experience'},
+          {images:[
+            {src:'..img/chiaroscuro/ipoint.jpg', title:'Initial Point'},         
+            {src:'..img/chiaroscuro/lexpansion.jpg', title:'Line Expansion'},    
+            {src:'..img/chiaroscuro/aenvelope.jpg', title:'Angular Envelope'},        
+            {src:'..img/chiaroscuro/rgeometry.jpg', title:'Resulting Geometry'},            
+            {src:'..img/chiaroscuro/axo.jpg', title:'Axonometric Diamgram'}
+          ]},
+          {text:'CHIAROSCURO ({/kiˌɑːrəˈskʊərəʊ/) : "Contrast between light and shadow in art'},
+          {text:'Light enters the building along the sun’s trajectory, unfolding through the visitor’s progression and shaping the experience of the space. This interplay between light and movement extends from the interior to the exterior: as the journey advances, the shell gradually opens, allowing the structure to emerge freely from within letting music bring the architecture to life.'},
+          {images:[
+            {src:'..img/chiaroscuro/exterior.jpg', title:'Interior Render'}, 
+            {src:'..img/chiaroscuro/interior.jpg', title:'Exterior Render'} 
+          ]},
+          {text:'Technical Drawings'},
+          {images:[
+            {src:'..img/chiaroscuro/floorplan.jpg', title:'Floor Plan - 1:200'}, 
+            {src:'..img/chiaroscuro/eastelevation.jpg', title:'East Elevation - 1:200'}, 
+            {src:'..img/chiaroscuro/section.jpg', title:'Section - 1:200'}, 
+          ]}
         ]},
+
+      
       {year:2025, title:'STRUCTURAL STUDY', desc:'Studio Project — Systemic Study',
         blocks:[
           {text:'Studio project as a systemic study. Add diagrams, models, and notes here.'}

@@ -106,8 +106,27 @@ const WORK = {
       
       {year:2025, title:'STRUCTURAL STUDY', desc:'Studio Project — Systemic Study',
         blocks:[
-          {text:'Studio project as a systemic study. Add diagrams, models, and notes here.'}
+          {text:'Split into three acts, this project explores three different methods of construction : filigree, solid and their mix use. Each project comes with the same amount of information, allowing a fair comparaison throughout.'},
+          {text:'The first project explores filigree methods throught the boolean intersection of space. The structure allows the exploration of non conventional geometries.'},
+          {images:[
+            {src:'../img/structuralstudy/axo1.jpg', title:'Axonometric View'},
+            {src:'../img/structuralstudy/plan1.jpg', title:'Plan'},
+            {src:'../img/structuralstudy/section1.jpg', title:'Section'}
+          ]},
+          {text:'The second project tries to extend the idea of solid construction by creating a more linear space. The idea is still to get out of the "box", by proposing a semi-linear area.'},
+          {images:[
+            {src:'../img/structuralstudy/axo2.jpg', title:'Axonometric View'},
+            {src:'../img/structuralstudy/plan2.jpg', title:'Plan'},
+            {src:'../img/structuralstudy/section2.jpg', title:'Section'}
+          ]},
+          {text:'The last project starts off by the same idea of the first one : boolean intersection. The idea is extended by working on the horizon : a simple point is split in two, extended to lines becoming the solid construction. The main idea here is to create a homogenous look with a parasitic intent : the beam structure intersects with the masonry in a smooth way while still trying to repulse each other.'},
+          {images:[
+            {src:'../img/structuralstudy/axo3.jpg', title:'Axonometric View'},
+            {src:'../img/structuralstudy/plan3.jpg', title:'Plan'},
+            {src:'../img/structuralstudy/section3.jpg', title:'Section'}
+          ]}
         ]},
+      
       {year:2024, title:'ALTORIS', desc:'Studio Project — Observation Site',
         blocks:[
           {text:'Studio project on an observation site. Swap in images and a short write-up.'}

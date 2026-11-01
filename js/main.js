@@ -89,7 +89,7 @@ const WORK = {
             {src:'../img/chiaroscuro/rgeometry.jpg', title:'Resulting Geometry'},            
             {src:'../img/chiaroscuro/axo.jpg', title:'Axonometric Diamgram'}
           ]},
-          {text:'CHIAROSCURO ({/kiˌɑːrəˈskʊərəʊ/) : "Contrast between light and shadow in art'},
+          {text:'CHIAROSCURO ({/kiˌɑːrəˈskʊərəʊ/) : "Contrast between light and shadow in art"'},
           {text:'Light enters the building along the sun’s trajectory, unfolding through the visitor’s progression and shaping the experience of the space. This interplay between light and movement extends from the interior to the exterior: as the journey advances, the shell gradually opens, allowing the structure to emerge freely from within letting music bring the architecture to life.'},
           {images:[
             {src:'../img/chiaroscuro/interior.jpg', title:'Interior Render'}, 

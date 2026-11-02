@@ -118,7 +118,8 @@ const WORK = {
           {images:[
             {src:'../img/structuralstudy/axo3.jpg', title:'Axonometric View'},
             {src:'../img/structuralstudy/plan3.jpg', title:'Plan - 1:200'},
-            {src:'../img/structuralstudy/section3.jpg', title:'Section - 1:200'}
+            {src:'../img/structuralstudy/section3.jpg', title:'Section - 1:200'},
+            {src:'../img/structuralstudy/model.jpg', title:'Physical Model - Cardboard + Wood'}
           ]}
         ]},
 

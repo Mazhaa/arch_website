@@ -32,7 +32,8 @@ const WORK = {
             {src:'../img/reflux/frame.jpg', title:'Space Frame'},
             {src:'../img/reflux/facade.jpg', title:'Metal Facade'},
             {src:'../img/reflux/core.jpg', title:'Reinforced Concrete Core + Concrete Floors'},
-            {src:'../img/reflux/sunp.jpg', title:'Rotating Solar Protections'}
+            {src:'../img/reflux/sunp.jpg', title:'Rotating Solar Protections'},
+            {src:'../img/reflux/detail.jpg', title:'Contrusction Detail'}
           ]},
           {images:[
             {src:'../img/reflux/render.jpg', title:'Interior Render'}
@@ -152,9 +153,23 @@ const WORK = {
         blocks:[
           {text:'Investigating the interactions between humans and their surroundings, this procedurally generated animation cites the possibilities of a living architecture. The geometries shift, grow, and change with human movement, adapting itself to the living being, raising the following tquestion:<br>Should architecture adapt to humans, or should it be the other way around?'},
           {video:'../video/growth.mp4'}
-        ]}
-    ]
-  }
+        ]},
+      {year:2026, title:'REWRITING SPACE', desc:'Architectural Drawing Experiment',
+        blocks:[
+          {text:'Drawing experiment using literature as a design provocateur. Deborah Levy’s Real Estate was approached not only as a narrative but also as a form of architecture. Rather than designing from the story itself, I worked from its representation, the PDF, treating it as an architectural drawing. The book then became the architecture, the PDF became its drawing, and the project is con structed by drawing on top of that representation. The geometry emerged through analysis and trans formation of the document itself: page shifts, repetition of constant angles, cutting, folding, mirroring and displacement.'},
+          {video:'../img/rewritingspace/drawing.jpg'},
+          {text:'Instead of composing a fixed object, the drawing develops through processes of reinterpretation and rewriting. The resulting “house” is therefore not defined by walls or rooms, but by relationships, open fields and conditions of inhabitation. Water becomes a spatial anchor, reflecting its recurring role in the book as a symbol of freedom and possibility. The project exists somewhere between drawing, architecture and notation. Form is only a temporary condition.'}
+    ]},
+    {year:2026, title:'CODE.ASCENT / GLANCE', desc:'Procedural Architecture Video Experiment',
+        blocks:[
+          {text:'GLANCE is a video-based architectural exploration developed as part of my Aberration Series and exhibited at my architecture school. The project investigates the distortion and abstraction of architectural forms through digital experimentation, questioning the relationships between geometry, perception and spatial composition.The work unfolds through three distinct approaches. The first begins with simple geometries that are procedurally deformed under the influence of forces, progressively merging into one another to generate spaces and experiences.'},
+          {video:'../img/glance/video.mp4'},
+          {text:'The second introduces a process of rationalization, removing these deformations and establishing a transition towards more ordered architectural forms. In the third, architectural objects, stairs in this case, are generated procedurally, with mechanical arms defining their boundaries and actions. Through these transformations, GLANCE explores the tension between abstraction and rationalization, investigating how procedural systems can generate, transform and structure architectural space.'},
+          {images:[
+            {src:'../img/glance/poster.jpg'},
+          ]}
+        ]}, 
+  ]
 };
 
 function fadeReplace(el, updateFn, dur){

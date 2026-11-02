@@ -23,9 +23,9 @@ const WORK = {
             {src:'../img/reflux/rdc.jpg', title:'Ground Floor Plan - 1:200'},
             {src:'../img/reflux/layout1.jpg', title:'Layout::Floor 1-2-13-14 - 1:200'},
             {src:'../img/reflux/layout2.jpg', title:'Layout::Floor 3 to 12 - 1:200'},
-            {src:'../img/reflux/t2.jpg', title:'T2 Type Appartment::45-50m² - 1:200'},
-            {src:'../img/reflux/t3.jpg', title:'T3 Type Appartment::65-70m² - 1:200'},
-            {src:'../img/reflux/t4.jpg', title:'T4 Type Appartment::80-85m² - 1:200'}
+            {src:'../img/reflux/t2.jpg', title:'T2 Type Apartment::45-50m² - 1:200'},
+            {src:'../img/reflux/t3.jpg', title:'T3 Type Apartment::65-70m² - 1:200'},
+            {src:'../img/reflux/t4.jpg', title:'T4 Type Apartment::80-85m² - 1:200'}
           ]},
           {text:'The central core stabilizes two housing volumes: one supported by a spatial frame, the other suspended by tension rods. Together, these systems free the ground plane and expose the forces holding the building together as its envelope fragments. Rotating panels form an adaptive second skin, adjusting solar protection throughout the day while allowing residents to control light exposure.'},
           {images:[
@@ -33,7 +33,7 @@ const WORK = {
             {src:'../img/reflux/facade.jpg', title:'Metal Facade'},
             {src:'../img/reflux/core.jpg', title:'Reinforced Concrete Core + Concrete Floors'},
             {src:'../img/reflux/sunp.jpg', title:'Rotating Solar Protections'},
-            {src:'../img/reflux/detail.jpg', title:'Contrusction Detail'}
+            {src:'../img/reflux/detail.jpg', title:'Construction Detail'}
           ]},
           {images:[
             {src:'../img/reflux/render.jpg', title:'Interior Render'}
@@ -44,17 +44,15 @@ const WORK = {
         blocks:[
           {text:'Conceived as part of the defensive system surrounding Paris, the Fort d’Aubervilliers was designed to disappear within it. Its architecture follows a fundamental military logic: protect, conceal, control'},
           {images:[
-            {src:'../img/chiaroscuro/cityplan.jpg', title:'City Plan'}]},
-          {text:'Earth becomes structure, walls become boundaries, openings become points of surveillance, and the horizon becomes an obversation point, anticipating and controling. The fort seems to grow out of the terrain. Its masses are low, heavy and directional, merging slopes, embankments and masonry into a continuous relationship between building and ground.'},
+            {src:'../img/chiaroscuro/cityplan.jpg', title:'City Plan'}
+          ]},
+          {text:'Earth becomes structure, walls become boundaries, openings become points of surveillance, and the horizon becomes an observation point, anticipating and controlling. The fort seems to grow out of the terrain. Its masses are low, heavy and directional, merging slopes, embankments and masonry into a continuous relationship between building and ground.'},
           {images:[
             {src:'../img/chiaroscuro/fort1.jpg', title:'Historical Perimeter'},
             {src:'../img/chiaroscuro/fort2.jpg', title:'Defensive Walls'},
             {src:'../img/chiaroscuro/fort3.jpg', title:'Surveillance Strategy'}
           ]},
-          {text:'This relationship between architecture, ground and force became the starting point of the project. Rather than re producing the fort’s historical appearance, I sought to reinterpret its underlying principles heaviness, concealment, protection and orientation through a contemporary architectural language. My main research was to ask myself : “What happens when this defensive logic is no longer expressed through primitives, but through the form of the building itself?”'},
-          {images:[
-            {src:'../img/chiaroscuro/history.jpg', title:'History'}
-          ]},
+          {text:'This relationship between architecture, ground and force became the starting point of the project. Rather than reproducing the fort’s historical appearance, I sought to reinterpret its underlying principles — heaviness, concealment, protection and orientation — through a contemporary architectural language. My main research was to ask myself : “What happens when this defensive logic is no longer expressed through primitives, but through the form of the building itself?”'},
           {images:[
             {src:'../img/chiaroscuro/fort_img_1.jpg', title:'Gendarmerie Tower Entrance - Courtesy of Aubervilliers City'},
             {src:'../img/chiaroscuro/fort_img_2.jpg', title:'Inside the Fort - Courtesy of Aubervilliers City'}
@@ -78,56 +76,52 @@ const WORK = {
             {src:'../img/chiaroscuro/cresult.jpg', title:'Continuous Curve - Resulting Shell'},
             {src:'../img/chiaroscuro/aresult.jpg', title:'Angular Curve - Resulting Shell'}
           ]},
-          {text:'Geographicaly, the nearby south garden reveals an opportunity to establish a stronger relationship between the intervention and its landscape, while working on the human circulation, the analysis of the horizon as a field established itself, bridging the existing history and newer data.'},
+          {text:'Geographically, the nearby south garden reveals an opportunity to establish a stronger relationship between the intervention and its landscape, while working on the human circulation, the analysis of the horizon as a field established itself, bridging the existing history and newer data.'},
           {images:[
             {src:'../img/chiaroscuro/siteplan.jpg', title:'Site Plan'}
           ]},
-          {text:'The site derived field (2D) intersects itself with the preceeding sound field (2D), giving birth to the architectural experience as a whole : A three dimensional volume enhanced with a temporal experience'},
+          {text:'The site derived field (2D) intersects itself with the preceding sound field (2D), giving birth to the architectural experience as a whole : A three dimensional volume enhanced with a temporal experience'},
           {images:[
-            {src:'../img/chiaroscuro/ipoint.jpg', title:'Initial Point'},         
-            {src:'../img/chiaroscuro/lexpansion.jpg', title:'Line Expansion'},    
-            {src:'../img/chiaroscuro/aenvelope.jpg', title:'Angular Envelope'},        
-            {src:'../img/chiaroscuro/rgeometry.jpg', title:'Resulting Geometry'},            
-            {src:'../img/chiaroscuro/axo.jpg', title:'Axonometric Diamgram'}
+            {src:'../img/chiaroscuro/process.jpg', title:'Initial Point > Line Expansion × Angular Envelope'},
+            {src:'../img/chiaroscuro/axo.jpg', title:'Axonometric Diagram'}
           ]},
-          {text:'CHIAROSCURO ({/kiˌɑːrəˈskʊərəʊ/) : "Contrast between light and shadow in art"'},
+          {text:'CHIAROSCURO (/kiˌɑːrəˈskʊərəʊ/) : "Contrast between light and shadow in art"'},
           {text:'Light enters the building along the sun’s trajectory, unfolding through the visitor’s progression and shaping the experience of the space. This interplay between light and movement extends from the interior to the exterior: as the journey advances, the shell gradually opens, allowing the structure to emerge freely from within letting music bring the architecture to life.'},
           {images:[
-            {src:'../img/chiaroscuro/interior.jpg', title:'Interior Render'}, 
-            {src:'../img/chiaroscuro/exterior.jpg', title:'Exterior Render'} 
+            {src:'../img/chiaroscuro/interior.jpg', title:'Interior Render'},
+            {src:'../img/chiaroscuro/exterior.jpg', title:'Exterior Render'}
           ]},
           {text:'Technical Drawings'},
           {images:[
-            {src:'../img/chiaroscuro/floorplan.jpg', title:'Floor Plan - 1:200'}, 
-            {src:'../img/chiaroscuro/eastelevation.jpg', title:'East Elevation - 1:200'}, 
-            {src:'../img/chiaroscuro/section.jpg', title:'Section - 1:200'} 
+            {src:'../img/chiaroscuro/floorplan.jpg', title:'Floor Plan - 1:200'},
+            {src:'../img/chiaroscuro/eastelevation.jpg', title:'East Elevation - 1:200'},
+            {src:'../img/chiaroscuro/section.jpg', title:'Section - 1:200'}
           ]}
         ]},
 
-      
       {year:2025, title:'STRUCTURAL STUDY', desc:'Studio Project — Systemic Study',
         blocks:[
-          {text:'Split into three acts, this project explores three different methods of construction : filigree, solid and their mix use. Each project comes with the same amount of information, allowing a fair comparaison throughout.'},
-          {text:'The first project explores filigree methods throught the boolean intersection of space. The structure allows the exploration of non conventional geometries.'},
+          {text:'Split into three acts, this project explores three different methods of construction : filigree, solid and their mixed use. Each project comes with the same amount of information, allowing a fair comparison throughout.'},
+          {text:'The first project explores filigree methods through the boolean intersection of space. The structure allows the exploration of non conventional geometries.'},
           {images:[
             {src:'../img/structuralstudy/axo1.jpg', title:'Axonometric View'},
-            {src:'../img/structuralstudy/plan1.jpg', title:'Plan'},
-            {src:'../img/structuralstudy/section1.jpg', title:'Section'}
+            {src:'../img/structuralstudy/plan1.jpg', title:'Plan - 1:200'},
+            {src:'../img/structuralstudy/section1.jpg', title:'Section - 1:200'}
           ]},
           {text:'The second project tries to extend the idea of solid construction by creating a more linear space. The idea is still to get out of the "box", by proposing a semi-linear area.'},
           {images:[
             {src:'../img/structuralstudy/axo2.jpg', title:'Axonometric View'},
-            {src:'../img/structuralstudy/plan2.jpg', title:'Plan'},
-            {src:'../img/structuralstudy/section2.jpg', title:'Section'}
+            {src:'../img/structuralstudy/plan2.jpg', title:'Plan - 1:200'},
+            {src:'../img/structuralstudy/section2.jpg', title:'Section - 1:200'}
           ]},
           {text:'The last project starts off by the same idea of the first one : boolean intersection. The idea is extended by working on the horizon : a simple point is split in two, extended to lines becoming the solid construction. The main idea here is to create a homogenous look with a parasitic intent : the beam structure intersects with the masonry in a smooth way while still trying to repulse each other.'},
           {images:[
             {src:'../img/structuralstudy/axo3.jpg', title:'Axonometric View'},
-            {src:'../img/structuralstudy/plan3.jpg', title:'Plan'},
-            {src:'../img/structuralstudy/section3.jpg', title:'Section'}
+            {src:'../img/structuralstudy/plan3.jpg', title:'Plan - 1:200'},
+            {src:'../img/structuralstudy/section3.jpg', title:'Section - 1:200'}
           ]}
         ]},
-      
+
       {year:2024, title:'ALTORIS', desc:'Studio Project — Observation Site',
         blocks:[
           {text:'Studio project on an observation site. Swap in images and a short write-up.'}
@@ -156,20 +150,23 @@ const WORK = {
         ]},
       {year:2026, title:'REWRITING SPACE', desc:'Architectural Drawing Experiment',
         blocks:[
-          {text:'Drawing experiment using literature as a design provocateur. Deborah Levy’s Real Estate was approached not only as a narrative but also as a form of architecture. Rather than designing from the story itself, I worked from its representation, the PDF, treating it as an architectural drawing. The book then became the architecture, the PDF became its drawing, and the project is con structed by drawing on top of that representation. The geometry emerged through analysis and trans formation of the document itself: page shifts, repetition of constant angles, cutting, folding, mirroring and displacement.'},
-          {video:'../img/rewritingspace/drawing.jpg'},
+          {text:'Drawing experiment using literature as a design provocateur. Deborah Levy’s Real Estate was approached not only as a narrative but also as a form of architecture. Rather than designing from the story itself, I worked from its representation, the PDF, treating it as an architectural drawing. The book then became the architecture, the PDF became its drawing, and the project is constructed by drawing on top of that representation. The geometry emerged through analysis and transformation of the document itself: page shifts, repetition of constant angles, cutting, folding, mirroring and displacement.'},
+          {images:[
+            {src:'../img/rewritingspace/drawing.jpg', title:'Drawing'}
+          ]},
           {text:'Instead of composing a fixed object, the drawing develops through processes of reinterpretation and rewriting. The resulting “house” is therefore not defined by walls or rooms, but by relationships, open fields and conditions of inhabitation. Water becomes a spatial anchor, reflecting its recurring role in the book as a symbol of freedom and possibility. The project exists somewhere between drawing, architecture and notation. Form is only a temporary condition.'}
-    ]},
-    {year:2026, title:'CODE.ASCENT / GLANCE', desc:'Procedural Architecture Video Experiment',
+        ]},
+      {year:2026, title:'CODE.ASCENT / GLANCE', desc:'Procedural Architecture Video Experiment',
         blocks:[
-          {text:'GLANCE is a video-based architectural exploration developed as part of my Aberration Series and exhibited at my architecture school. The project investigates the distortion and abstraction of architectural forms through digital experimentation, questioning the relationships between geometry, perception and spatial composition.The work unfolds through three distinct approaches. The first begins with simple geometries that are procedurally deformed under the influence of forces, progressively merging into one another to generate spaces and experiences.'},
+          {text:'GLANCE is a video-based architectural exploration developed as part of my Aberration Series and exhibited at my architecture school. The project investigates the distortion and abstraction of architectural forms through digital experimentation, questioning the relationships between geometry, perception and spatial composition. The work unfolds through three distinct approaches. The first begins with simple geometries that are procedurally deformed under the influence of forces, progressively merging into one another to generate spaces and experiences.'},
           {video:'../img/glance/video.mp4'},
           {text:'The second introduces a process of rationalization, removing these deformations and establishing a transition towards more ordered architectural forms. In the third, architectural objects, stairs in this case, are generated procedurally, with mechanical arms defining their boundaries and actions. Through these transformations, GLANCE explores the tension between abstraction and rationalization, investigating how procedural systems can generate, transform and structure architectural space.'},
           {images:[
-            {src:'../img/glance/poster.jpg'},
+            {src:'../img/glance/poster.jpg', title:'GLANCE - Poster'}
           ]}
-        ]}, 
-  ]
+        ]}
+    ]
+  }
 };
 
 function fadeReplace(el, updateFn, dur){

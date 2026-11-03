@@ -125,7 +125,7 @@ const WORK = {
 
       {year:2024, title:'ALTORIS', desc:'Studio Project — Observation Site',
         blocks:[
-          {text:'Studio project on an observation site. Swap in images and a short write-up.'}
+          {text:'Studio project on an observation site.'}
         ]}
     ]
   },

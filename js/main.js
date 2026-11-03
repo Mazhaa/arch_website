@@ -123,7 +123,7 @@ const WORK = {
           ]}
         ]},
 
-      {year:2024, title:'ALTORIS', desc:'Studio Project — Observation Site',
+       {year:2024, title:'ALTORIS', desc:'Studio Project — Observation Site',
         blocks:[
           {text:'Taking birth in the heart of Paris, Altoris merges two coexisting landmarks : Ile de la Cité and Notre Dame de Paris. Imposing yet lacunar, the project draws inspiration from Notre Dame de Paris, playing with simple, reimagined geometric shapes.'},
           {images:[
@@ -134,7 +134,7 @@ const WORK = {
           ]},
           {text:'The proposed route aims to be rewarding, offering visitors a sweeping view of the surrounding area.'},
           {images:[
-            {src:'../img/altoris/plan0.jpg', title:' Floor Plan +8.3M - 1:300'},
+            {src:'../img/altoris/plan0.jpg', title:'Floor Plan +8.3M - 1:300'},
             {src:'../img/altoris/plan1.jpg', title:'Interior Floor Plan + 15M - 1:300'},
             {src:'../img/altoris/plan2.jpg', title:'Top View +18M - 1:300'},
             {src:'../img/altoris/elevation.jpg', title:'North Elevation - 1:300'},

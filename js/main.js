@@ -52,7 +52,7 @@ const WORK = {
             {src:'../img/chiaroscuro/fort2.jpg', title:'Defensive Walls'},
             {src:'../img/chiaroscuro/fort3.jpg', title:'Surveillance Strategy'}
           ]},
-          {text:'This relationship between architecture, ground and force became the starting point of the project. Rather than reproducing the fort’s historical appearance, I sought to reinterpret its underlying principles — heaviness, concealment, protection and orientation — through a contemporary architectural language. My main research was to ask myself : “What happens when this defensive logic is no longer expressed through primitives, but through the form of the building itself?”'},
+          {text:'This relationship between architecture, ground and force became the starting point of the project. Rather than reproducing the fort’s historical appearance, I sought to reinterpret its underlying principles : heaviness, concealment, protection and orientation, through a contemporary architectural language. My main research was to ask myself : “What happens when this defensive logic is no longer expressed through primitives, but through the form of the building itself?”'},
           {images:[
             {src:'../img/chiaroscuro/fort_img_1.jpg', title:'Gendarmerie Tower Entrance - Courtesy of Aubervilliers City'},
             {src:'../img/chiaroscuro/fort_img_2.jpg', title:'Inside the Fort - Courtesy of Aubervilliers City'}

@@ -382,6 +382,14 @@ document.addEventListener('DOMContentLoaded', function(){
   const workCat = document.body.dataset.work;
   if(workCat && WORK[workCat]) renderWork(workCat);
 
+document.querySelectorAll('.project-item[data-static]').forEach(item=>{
+    const row = item.querySelector(':scope > .project-row');
+    row.addEventListener('click',()=>{
+      const open = item.classList.toggle('open');
+      row.setAttribute('aria-expanded', open);
+    });
+  });
+
   /* fade the page in, 300ms */
   requestAnimationFrame(()=>{
     requestAnimationFrame(()=> document.body.classList.add('page-loaded'));

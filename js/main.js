@@ -29,6 +29,7 @@ const WORK = {
           ]},
           {text:'The central core stabilizes two housing volumes: one supported by a spatial frame, the other suspended by tension rods. Together, these systems free the ground plane and expose the forces holding the building together as its envelope fragments. Rotating panels form an adaptive second skin, adjusting solar protection throughout the day while allowing residents to control light exposure.'},
           {images:[
+            {src:'../img/reflux/section.jpg', title:'Section'},
             {src:'../img/reflux/frame.jpg', title:'Space Frame'},
             {src:'../img/reflux/facade.jpg', title:'Metal Facade'},
             {src:'../img/reflux/core.jpg', title:'Reinforced Concrete Core + Concrete Floors'},

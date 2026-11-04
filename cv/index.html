@@ -42,92 +42,124 @@
 </nav>
 
 <main>
-<section id="view-cv" class="view" aria-label="Curriculum vitae">
-      <div class="cv-layout">
-        <div class="cv-vertical-rule" aria-hidden="true"></div>
-        <header class="cv-head">
-          <div class="cv-overline"><span class="cv-cross" aria-hidden="true">+</span><span>SUB_TYPE::</span></div>
-          <h1 class="cv-stamp">CV</h1>
-          <div class="cv-tools">
-            <button type="button" id="language-toggle" class="cv-tool" aria-label="Switch language to French">LANGUAGE_EN</button>
-            <span class="cv-tools-separator" aria-hidden="true">/</span>
-            <button type="button" id="expand-toggle" class="cv-tool">COLLAPSE_ALL</button>
-            <span class="cv-tools-separator" aria-hidden="true">/</span>
-            <button type="button" id="print-cv" class="cv-tool">PRINT_CV ↗</button>
-          </div>
-        </header>
-
-        <section class="cv-section" id="education">
-          <h2><button class="cv-section-toggle" type="button" aria-expanded="true" aria-controls="education-content"><span class="cv-marker" aria-hidden="true">+</span><span class="cv-heading" data-fr="[F]ormation">[E]ducation</span></button></h2>
-          <div class="cv-section-content" id="education-content"><div class="cv-inner cv-section-body">
-            <article class="cv-entry">
-              <div><h3 data-fr="École nationale supérieure d'architecture Paris-Val de Seine (ENSAPVS)">National School of Architecture Paris Val de Seine (ENSAPVS)</h3><p class="cv-subtitle" data-fr="Bachelor — Architecture">Bachelor — Architecture</p></div>
-              <div class="cv-meta"><span data-fr="Paris, France">Paris, FRA</span><em data-fr="Sept. 2024 – En cours">Sept. 2024 – Ongoing</em></div>
-            </article>
-            <article class="cv-entry">
-              <div><h3 data-fr="École polytechnique fédérale de Lausanne (EPFL) + Université de Genève (UNIGE)">Swiss Federal Institute of Technology Lausanne (EPFL) + University of Geneva (Unige)</h3><p class="cv-subtitle" data-fr="Bachelor — Mathématiques + Bachelor — Informatique">Bachelor — Mathematics + Bachelor — Computer Science</p></div>
-              <div class="cv-meta"><span data-fr="Lausanne, Suisse">Lausanne, CH</span><em data-fr="Sept. 2022 – Juill. 2024">Sept. 2022 – July 2024</em></div>
-            </article>
-            <article class="cv-entry">
-              <div><h3 data-fr="Lycée Saint-Jean et La Croix">Saint-Jean et La Croix High School</h3><p class="cv-subtitle" data-fr="Baccalauréat général (Mention Très Bien)">French General Baccalauréat (Very High Honours)</p></div>
-              <div class="cv-meta"><span data-fr="Saint-Quentin, France">St. Quentin, FRA</span><em data-fr="Sept. 2019 – Juill. 2022">Sept. 2019 – July 2022</em></div>
-            </article>
-          </div></div>
-        </section>
-
-        <section class="cv-section" id="experience">
-          <h2><button class="cv-section-toggle" type="button" aria-expanded="true" aria-controls="experience-content"><span class="cv-marker" aria-hidden="true">+</span><span class="cv-heading" data-fr="[E]xpérience">[E]xperience</span></button></h2>
-          <div class="cv-section-content" id="experience-content"><div class="cv-inner cv-section-body">
-            <article class="cv-entry">
-              <div><h3>L’Oréal</h3><p class="cv-subtitle" data-fr="Assistant de production">Production Assistant</p>
-                <ul class="cv-bullets"><li data-fr="Maintenance des lignes de conditionnement.">Maintenance of packaging lines.</li><li data-fr="Installation du laboratoire pour les exportations vers la Chine.">Laboratory setup for exports to China.</li></ul>
-              </div><div class="cv-meta"><span data-fr="Saint-Quentin, France">St. Quentin, FRA</span><em data-fr="Août 2024">August 2024</em></div>
-            </article>
-            <article class="cv-entry">
-              <div><h3>L’Oréal</h3><p class="cv-subtitle" data-fr="Assistant contrôle qualité — Luxe">Luxury Quality Control Assistant</p>
-                <ul class="cv-bullets"><li data-fr="Création d'une base de données Excel + Python pour anticiper les contraintes à venir.">Creation of an Excel + Python database used to predict future constraints.</li><li data-fr="Création de manuels physiques et numériques.">Creation of physical and digital technical manuals.</li><li data-fr="Mise en place du laboratoire.">Laboratory setup.</li></ul>
-              </div><div class="cv-meta"><span data-fr="Caudry, France">Caudry, FRA</span><em data-fr="Août – Sept. 2023">August – Sept. 2023</em></div>
-            </article>
-            <article class="cv-entry">
-              <div><h3>Société Générale (F.K.A. Crédit du Nord)</h3><p class="cv-subtitle" data-fr="Stage découverte">Exploratory Internship</p>
-                <ul class="cv-bullets"><li data-fr="Échanges avec la clientèle et gestion de l'accueil en équipe, participation aux rendez-vous clients.">Interacting with customers, management of the reception area as a part of the team, participation in customer meetings.</li></ul>
-              </div><div class="cv-meta"><span data-fr="Cambrai, France">Cambrai, FRA</span><em data-fr="Oct. 2020">Oct. 2020</em></div>
-            </article>
-          </div></div>
-        </section>
-
-        <section class="cv-section" id="skills">
-          <h2><button class="cv-section-toggle" type="button" aria-expanded="true" aria-controls="skills-content"><span class="cv-marker" aria-hidden="true">+</span><span class="cv-heading" data-fr="[C]ompétences">[S]kills</span></button></h2>
-          <div class="cv-section-content" id="skills-content"><div class="cv-inner cv-section-body">
-            <div class="cv-skill"><h3 data-fr="Langues">Languages</h3><ul class="cv-bullets"><li data-fr="Français + Anglais + Turc : natif et/ou bilingue (C1/C2).">Native and/or bilingual in French + English + Turkish (C1/C2)</li><li data-fr="Notions de japonais.">Basic knowledge of Japanese.</li></ul></div>
-            <div class="cv-skill"><h3 data-fr="Bureautique">Office Software</h3><ul class="cv-bullets"><li data-fr="Microsoft Office, Excel VBA.">Microsoft Office Suite, Excel VBA.</li></ul></div>
-            <div class="cv-skill"><h3 data-fr="Création computationnelle">Computational</h3><ul class="cv-bullets"><li>Grasshopper, Houdini, Touch Designer.</li></ul></div>
-            <div class="cv-skill"><h3 data-fr="Architecture">Architectural</h3><ul class="cv-bullets"><li data-fr="Rhinoceros 8, notions de Revit.">Rhinoceros 8, basic knowledge of Revit.</li></ul></div>
-            <div class="cv-skill"><h3 data-fr="Visuel">Visual</h3><ul class="cv-bullets"><li>Adobe Photoshop, Illustrator, Premiere Pro, Cinema 4D, Blender.</li></ul></div>
-            <div class="cv-skill"><h3 data-fr="Programmation">Programming</h3><ul class="cv-bullets"><li>Python, C, C++, LaTeX.</li></ul></div>
-            <div class="cv-skill"><h3 data-fr="Savoir-être">Soft Skills</h3><ul class="cv-bullets"><li data-fr="Capacité à travailler en autonomie et à respecter les échéances.">Ability to work heavily independently and meet deadlines.</li><li data-fr="Résolution de problèmes en toute situation.">Problem analysis and resolution.</li><li data-fr="Attention au détail et solide organisation.">Attention to detail and strong organizational skills.</li><li data-fr="Adaptabilité et capacité à apprendre rapidement.">Adaptability and the ability to learn quickly.</li></ul></div>
-          </div></div>
-        </section>
-
-        <section class="cv-section" id="personal-projects">
-          <h2><button class="cv-section-toggle" type="button" aria-expanded="true" aria-controls="projects-content"><span class="cv-marker" aria-hidden="true">+</span><span class="cv-heading" data-fr="[P]rojets [P]ersonnels">[P]ersonal [P]rojects</span></button></h2>
-          <div class="cv-section-content" id="projects-content"><div class="cv-inner cv-section-body">
-            <div class="cv-skill"><h3><span data-fr="Design graphique">Graphic Design</span> <span class="cv-pipe">|</span> <em>Photoshop, Illustrator, Cinema 4D</em></h3><ul class="cv-bullets"><li data-fr="Création visuelle pour particuliers et créateurs de contenu.">Visual design for individuals + content creators.</li><li data-fr="Modélisation 3D à des fins promotionnelles.">3D modeling for promotionals purposes.</li></ul></div>
-            <div class="cv-skill"><h3><span data-fr="Animation 3D + Design procédural">3D Animation + Procedural Design</span> <span class="cv-pipe">|</span> <em>Premiere Pro, Houdini, Cinema 4D, Blender</em></h3><ul class="cv-bullets"><li data-fr="Art fractal et motion design sur Houdini.">Procedural hard surface modeling + animation in Houdini.</li><li data-fr="Modélisation par déformateurs et motion design sur Cinema 4D.">Deformer-based modeling + motion design in Cinema 4D.</li><li data-fr="Composition + montage vidéo sur Premiere Pro.">Composition + video editing in Premiere Pro.</li><li data-fr="Projection à partir de bases de simulation pour exposition.">Projection based visuals for exhibition.</li></ul></div>
-            <div class="cv-skill"><h3><span data-fr="Design vestimentaire">Clothing Design</span> <span class="cv-pipe">|</span> <em>Photoshop, Illustrator, Clo3D</em></h3><ul class="cv-bullets"><li data-fr="Conception vestimentaire sur papier et numérisation.">Clothing design on paper + digitization.</li><li data-fr="Modélisation 3D vestimentaire et simulation physique.">3D clothing modeling + physics simulation.</li></ul></div>
-          </div></div>
-        </section>
-
-        <section class="cv-section" id="certifications">
-          <h2><button class="cv-section-toggle" type="button" aria-expanded="true" aria-controls="certifications-content"><span class="cv-marker" aria-hidden="true">+</span><span class="cv-heading" data-fr="[C]ertifications">[C]ertifications</span></button></h2>
-          <div class="cv-section-content" id="certifications-content"><div class="cv-inner cv-section-body">
-            <article class="cv-entry"><div><h3>Symphonic Machines V1.0 <span class="cv-pipe">|</span> <em>Houdini</em></h3></div><div class="cv-meta"><span>Design Morphine</span><em>Feb. 2026</em></div></article>
-            <article class="cv-entry"><div><h3>Houdini for Architects 3.0 &amp; 1.0 <span class="cv-pipe">|</span> <em>Houdini, Autodesk Maya, Arnold</em></h3></div><div class="cv-meta"><span>Futurly</span><em>Oct. 2026</em></div></article>
-          </div></div>
-        </section>
-        <div class="cv-end" aria-hidden="true">+</div>
-      </div>
-    </section>
+  <section class="view" id="view-cv" aria-label="Curriculum vitae">
+    <header class="work-head">
+      <h1>CV</h1>
+      <p>+ SUB_TYPE:: CURRICULUM VITAE &nbsp; / &nbsp; LANGUAGE_EN</p>
+    </header>
+    <div class="work-body">
+      <div class="project-list"><details class="project-item" id="cv-education" open>
+  <summary class="project-row">
+    <span class="project-year">01</span>
+    <span class="project-title">[E]ducation</span>
+    <span class="project-toggle" aria-hidden="true">+</span>
+  </summary>
+  <div class="project-panel-inner"><div class="project-row">
+      <span class="project-year">Sept. 2024 – Ongoing</span>
+      <div class="project-list"><div class="project-desc">
+        <strong>National School of Architecture Paris Val de Seine (ENSAPVS)</strong><div>Paris, FRA</div><div><em>Bachelor — Architecture</em></div>
+      </div></div>
+    </div><div class="project-row">
+      <span class="project-year">Sept. 2022 – July 2024</span>
+      <div class="project-list"><div class="project-desc">
+        <strong>Swiss Federal Institute of Technology Lausanne (EPFL) + University of Geneva (Unige)</strong><div>Lausanne, CH</div><div><em>Bachelor — Mathematics + Bachelor — Computer Science</em></div>
+      </div></div>
+    </div><div class="project-row">
+      <span class="project-year">Sept. 2019 – July 2022</span>
+      <div class="project-list"><div class="project-desc">
+        <strong>Saint-Jean et La Croix High School</strong><div>St. Quentin, FRA</div><div><em>French General Baccalauréat (Very High Honours)</em></div>
+      </div></div>
+    </div></div>
+</details>
+<details class="project-item" id="cv-experience" open>
+  <summary class="project-row">
+    <span class="project-year">02</span>
+    <span class="project-title">[E]xperience</span>
+    <span class="project-toggle" aria-hidden="true">+</span>
+  </summary>
+  <div class="project-panel-inner"><div class="project-row">
+      <span class="project-year">August 2024</span>
+      <div class="project-list"><div class="project-desc">
+        <strong>L’Oréal</strong><div>St. Quentin, FRA</div><div><em>Production Assistant</em></div><ul><li>• Maintenance of packaging lines.</li><li>• Laboratory setup for exports to China.</li></ul>
+      </div></div>
+    </div><div class="project-row">
+      <span class="project-year">August – Sept. 2023</span>
+      <div class="project-list"><div class="project-desc">
+        <strong>L’Oréal</strong><div>Caudry, FRA</div><div><em>Luxury Quality Control Assistant</em></div><ul><li>• Creation of an Excel + Python database used to predict future constraints.</li><li>• Creation of physical and digital technical manuals.</li><li>• Laboratory setup.</li></ul>
+      </div></div>
+    </div><div class="project-row">
+      <span class="project-year">Oct. 2020</span>
+      <div class="project-list"><div class="project-desc">
+        <strong>Société Générale (F.K.A. Crédit du Nord)</strong><div>Cambrai, FRA</div><div><em>Exploratory Internship</em></div><ul><li>• Interacting with customers, management of the reception area as a part of the team, participation in customer meetings.</li></ul>
+      </div></div>
+    </div></div>
+</details>
+<details class="project-item" id="cv-skills" open>
+  <summary class="project-row">
+    <span class="project-year">03</span>
+    <span class="project-title">[S]kills</span>
+    <span class="project-toggle" aria-hidden="true">+</span>
+  </summary>
+  <div class="project-panel-inner"><div class="project-row">
+      <span class="project-year">+</span>
+      <div class="project-list"><div class="project-desc"><strong>Languages</strong><ul><li>• Native and/or bilingual in French + English + Turkish (C1/C2)</li><li>• Basic knowledge of Japanese.</li></ul></div></div>
+    </div><div class="project-row">
+      <span class="project-year">+</span>
+      <div class="project-list"><div class="project-desc"><strong>Office Software</strong><ul><li>• Microsoft Office Suite, Excel VBA.</li></ul></div></div>
+    </div><div class="project-row">
+      <span class="project-year">+</span>
+      <div class="project-list"><div class="project-desc"><strong>Computational</strong><ul><li>• Grasshopper, Houdini, Touch Designer.</li></ul></div></div>
+    </div><div class="project-row">
+      <span class="project-year">+</span>
+      <div class="project-list"><div class="project-desc"><strong>Architectural</strong><ul><li>• Rhinoceros 8, basic knowledge of Revit.</li></ul></div></div>
+    </div><div class="project-row">
+      <span class="project-year">+</span>
+      <div class="project-list"><div class="project-desc"><strong>Visual</strong><ul><li>• Adobe Photoshop, Illustrator, Premiere Pro, Cinema 4D, Blender.</li></ul></div></div>
+    </div><div class="project-row">
+      <span class="project-year">+</span>
+      <div class="project-list"><div class="project-desc"><strong>Programming</strong><ul><li>• Python, C, C++, LaTeX.</li></ul></div></div>
+    </div><div class="project-row">
+      <span class="project-year">+</span>
+      <div class="project-list"><div class="project-desc"><strong>Soft Skills</strong><ul><li>• Ability to work heavily independently and meet deadlines.</li><li>• Problem analysis and resolution.</li><li>• Attention to detail and strong organizational skills.</li><li>• Adaptability and the ability to learn quickly.</li></ul></div></div>
+    </div></div>
+</details>
+<details class="project-item" id="cv-personal-projects" open>
+  <summary class="project-row">
+    <span class="project-year">04</span>
+    <span class="project-title">[P]ersonal [P]rojects</span>
+    <span class="project-toggle" aria-hidden="true">+</span>
+  </summary>
+  <div class="project-panel-inner"><div class="project-row">
+      <span class="project-year">+</span>
+      <div class="project-list"><div class="project-desc"><strong><span data-fr="Design graphique">Graphic Design</span> <span class="cv-pipe">|</span> <em>Photoshop, Illustrator, Cinema 4D</em></strong><ul><li>• Visual design for individuals + content creators.</li><li>• 3D modeling for promotionals purposes.</li></ul></div></div>
+    </div><div class="project-row">
+      <span class="project-year">+</span>
+      <div class="project-list"><div class="project-desc"><strong><span data-fr="Animation 3D + Design procédural">3D Animation + Procedural Design</span> <span class="cv-pipe">|</span> <em>Premiere Pro, Houdini, Cinema 4D, Blender</em></strong><ul><li>• Procedural hard surface modeling + animation in Houdini.</li><li>• Deformer-based modeling + motion design in Cinema 4D.</li><li>• Composition + video editing in Premiere Pro.</li><li>• Projection based visuals for exhibition.</li></ul></div></div>
+    </div><div class="project-row">
+      <span class="project-year">+</span>
+      <div class="project-list"><div class="project-desc"><strong><span data-fr="Design vestimentaire">Clothing Design</span> <span class="cv-pipe">|</span> <em>Photoshop, Illustrator, Clo3D</em></strong><ul><li>• Clothing design on paper + digitization.</li><li>• 3D clothing modeling + physics simulation.</li></ul></div></div>
+    </div></div>
+</details>
+<details class="project-item" id="cv-certifications" open>
+  <summary class="project-row">
+    <span class="project-year">05</span>
+    <span class="project-title">[C]ertifications</span>
+    <span class="project-toggle" aria-hidden="true">+</span>
+  </summary>
+  <div class="project-panel-inner"><div class="project-row">
+      <span class="project-year">Feb. 2026</span>
+      <div class="project-list"><div class="project-desc">
+        <strong>Symphonic Machines V1.0 <span class="cv-pipe">|</span> <em>Houdini</em></strong><div>Design Morphine</div>
+      </div></div>
+    </div><div class="project-row">
+      <span class="project-year">Oct. 2026</span>
+      <div class="project-list"><div class="project-desc">
+        <strong>Houdini for Architects 3.0 &amp; 1.0 <span class="cv-pipe">|</span> <em>Houdini, Autodesk Maya, Arnold</em></strong><div>Futurly</div>
+      </div></div>
+    </div></div>
+</details></div>
+    </div>
+  </section>
 </main>
 
 <footer>© <span id="year"></span> Dawn<div class="footer-mark" aria-hidden="true"></div><span class="version-text">Version :: β 0.0.1</span></footer>

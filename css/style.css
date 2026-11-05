@@ -223,6 +223,6 @@ a.year-btn{display:block;text-decoration:none;}
 .cv-sticky{position:sticky;top:90px;}
 
 
-.project-item{scroll-margin-top:90px;}
-.year-btn.project-close{display:block;width:auto;margin:10px 28px 30px;padding:9px 18px;
-                        border:1px solid #111;font-size:.85rem;opacity:1;}
+  .project-item{scroll-margin-top:90px;}
+  .project-close{display:flex;align-items:baseline;width:100%;padding:22px 30px;cursor:pointer;}
+  .project-close:hover{background:#f7f7f7;}

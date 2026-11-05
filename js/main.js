@@ -235,9 +235,18 @@ function renderProjects(list, year){
         <span class="project-toggle" aria-hidden="true">+</span>
       </button>
       <div class="project-panel">
-        <div class="project-panel-inner">${blocksHTML(p)}</div>
+        <div class="project-panel-inner">${blocksHTML(p)}<button class="year-btn project-close" aria-label="Close project">Close ×</button></div>
       </div>
     </div>`).join('');
+  container.querySelectorAll('.project-close').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item = btn.closest('.project-item');
+      item.classList.remove('open');
+      item.querySelector('.project-row').setAttribute('aria-expanded','false');
+      /* once the panel has collapsed, bring the project's title row back into view */
+      setTimeout(()=>item.scrollIntoView({behavior:'smooth', block:'start'}), 380);
+    });
+  });
   container.querySelectorAll('.project-row').forEach(row=>{
     row.addEventListener('click',()=>{
       const item = row.closest('.project-item');

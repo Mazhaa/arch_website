@@ -235,7 +235,7 @@ function renderProjects(list, year){
         <span class="project-toggle" aria-hidden="true">+</span>
       </button>
       <div class="project-panel">
-        <div class="project-panel-inner">${blocksHTML(p)}<button class="year-btn project-close" aria-label="Close project">Close ×</button></div>
+        <div class="project-panel-inner">${blocksHTML(p)}<button class="project-close" aria-label="Close project"><span class="project-toggle" aria-hidden="true">+</span></button></div>
       </div>
     </div>`).join('');
   container.querySelectorAll('.project-close').forEach(btn=>{

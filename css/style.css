@@ -226,3 +226,8 @@ a.year-btn{display:block;text-decoration:none;}
   .project-item{scroll-margin-top:90px;}
   .project-close{display:flex;align-items:baseline;width:100%;padding:22px 30px;cursor:pointer;}
   .project-close:hover{background:#f7f7f7;}
+
+  /* animated GIF block */
+  .gif-block{margin:0;display:flex;flex-direction:column;align-items:center;}
+  .gif-block img{display:block;max-width:min(100%,900px);height:auto;}
+  .gif-block figcaption{margin-top:14px;font-family:var(--mono);font-size:.8rem;letter-spacing:.04em;text-align:center;}

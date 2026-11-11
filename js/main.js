@@ -86,17 +86,18 @@ const WORK = {
             {src:'../img/chiaroscuro/process.jpg', title:'Initial Point > Line Expansion × Angular Envelope'},
             {src:'../img/chiaroscuro/axo.jpg', title:'Axonometric Diagram'}
           ]},
-          {text:'CHIAROSCURO (/kiˌɑːrəˈskʊərəʊ/) : "Contrast between light and shadow in art"'},
-          {text:'Light enters the building along the sun’s trajectory, unfolding through the visitor’s progression and shaping the experience of the space. This interplay between light and movement extends from the interior to the exterior: as the journey advances, the shell gradually opens, allowing the structure to emerge freely from within letting music bring the architecture to life.'},
+          {text:'Enslaving both the thematic of the Chiaroscuro and the acoustic constraints, the geometry unfolds as the visitor progresses into the space.'},
           {images:[
-            {src:'../img/chiaroscuro/interior.jpg', title:'Interior Render'},
-            {src:'../img/chiaroscuro/exterior.jpg', title:'Exterior Render'}
-          ]},
-          {text:'Technical Drawings'},
-          {images:[
+            {src:'../img/chiaroscuro/wallsh.gif', title:'Acoustic Simulation'},
             {src:'../img/chiaroscuro/floorplan.jpg', title:'Floor Plan - 1:200'},
             {src:'../img/chiaroscuro/eastelevation.jpg', title:'East Elevation - 1:200'},
             {src:'../img/chiaroscuro/section.jpg', title:'Section - 1:200'}
+          ]},
+          {text:'CHIAROSCURO (/kiˌɑːrəˈskʊərəʊ/) : "Contrast between light and shadow in art"'},
+          {text:'This interplay between light and movement extends from the interior to the exterior: as the journey advances, the shell gradually opens, allowing the structure to emerge freely from within letting music bring the architecture to life.'},
+          {images:[
+            {src:'../img/chiaroscuro/interior.jpg', title:'Interior Render'},
+            {src:'../img/chiaroscuro/exterior.jpg', title:'Exterior Render'}
           ]}
         ]},
 
@@ -219,7 +220,8 @@ function blocksHTML(p){
   return p.blocks.map(b =>
     b.text ? `<p>${b.text}</p>` :
     b.images ? galleryHTML(b.images) :
-    b.video ? videoHTML(b.video) : ''
+    b.video ? videoHTML(b.video) :
+    b.gif ? gifHTML(b) : ''
   ).join('');
 }
 
@@ -262,6 +264,16 @@ function renderProjects(list, year){
     v.addEventListener('loadedmetadata', fit);
     if(v.readyState >= 1) fit();
   });
+}
+
+/* ---------- animated GIF (plays and loops on its own) ---------- */
+function gifHTML(b){
+  return `<div class="video-wrap">
+    <figure class="gif-block">
+      <img src="${b.gif}" alt="${b.title || ''}">${b.title ? `
+      <figcaption>${b.title}</figcaption>` : ''}
+    </figure>
+  </div>`;
 }
 
 /* ---------- looping, non-interactive video ---------- */

@@ -137,7 +137,7 @@ const WORK = {
           {text:'The proposed route aims to be rewarding, offering visitors a sweeping view of the surrounding area.'},
           {images:[
             {src:'../img/altoris/plan0.jpg', title:'Floor Plan +8.3M - 1:300'},
-            {src:'../img/altoris/plan1.jpg', title:'Interior Floor Plan + 15M - 1:300'},
+            {src:'../img/altoris/plan1.jpg', title:'Interior Floor Plan +15M - 1:300'},
             {src:'../img/altoris/plan2.jpg', title:'Top View +18M - 1:300'},
             {src:'../img/altoris/elevation.jpg', title:'North Elevation - 1:300'},
             {src:'../img/altoris/section.jpg', title:'Section - 1:300'}

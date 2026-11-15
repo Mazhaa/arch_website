@@ -160,6 +160,11 @@ const WORK = {
             {src:'../img/aberration/5-steeps.jpg', title:'ST[EE]PS'}
           ]}
         ]},
+      {year:2026, title:'H SCRAPPER', desc:'Procedural SkyScrapper',
+        blocks:[
+          {text:'Carved from a simple tower, H SCRAPPER explores yet again the interactions possible between architecture and its surroundings. Carved from procedurally generated geometry, the tower shifts, cuts, and moves according to movement and flow.'},
+          {video:'../video/h_scrapper.mp4'}
+        ]},
       {year:2026, title:'GROWTH', desc:'Procedural Architecture',
         blocks:[
           {text:'Investigating the interactions between humans and their surroundings, this procedurally generated animation cites the possibilities of a living architecture. The geometries shift, grow, and change with human movement, adapting itself to the living being, raising the following tquestion:<br>Should architecture adapt to humans, or should it be the other way around?'},
